@@ -1,5 +1,3 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
 const path = require('path');
 
 // src and dist directories
@@ -24,8 +22,9 @@ module.exports = targets.map(target=>({
             // Use ts-loader for TypeScript
             {
                 test: /\.ts$/,
-                use: 'ts-loader',
+                loader: 'ts-loader',
                 exclude: /node_modules/,
+                options: {configFile: "tsconfig.webpack.json"}
             },
         ],
     },
@@ -38,11 +37,8 @@ module.exports = targets.map(target=>({
         filename: target.name,
         path: path.resolve(__dirname, dist),
         library: "RoguelikePumpkinPatch",
-        libraryTarget: "umd"
+        libraryTarget: "umd",
     },
     plugins: [
     ]
 }));
-
-// Cleanup the dist directory
-module.exports[0].plugins.push(new CleanWebpackPlugin());
