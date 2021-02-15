@@ -1,4 +1,3 @@
-import css from './Display.module.scss';
 import { DisplayParams, TileSize, Dimension, TileOptions, Position } from './DisplayInterfaces';
 import { Tile } from './Tile';
 
@@ -29,7 +28,11 @@ export class Display {
         this.element = document.createElement('div');
         
         // Apply some default styles
-        this.element.classList.add(css.display);
+        this.element.style.position = "absolute";
+        this.element.style.left = "50%";
+        this.element.style.top = "50%";
+        this.element.style.transform = "translate(-50%, -50%)";
+
         this.background = (background) ? background : '#000000';
         this.foreground = (foreground) ? foreground : '#ffffff';
 
@@ -41,7 +44,8 @@ export class Display {
         };
 
         // Attach display to the target element
-        this.target.classList.add(css.displayContainer);
+        this.target.style.position = "relative";
+        this.target.style.overflow = "hidden";
         this.target.appendChild(this.element);
     };
 

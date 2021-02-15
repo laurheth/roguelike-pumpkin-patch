@@ -1,4 +1,3 @@
-import css from './Display.module.scss';
 import { TileSize, Position, TileOptions } from './DisplayInterfaces';
 
 /** Class to keep track of each individual tile in the display */
@@ -30,7 +29,7 @@ export class Tile {
     ) {
         // Create necessary elements and apply classes
         this.element = document.createElement('div');
-        this.element.classList.add(css.tile);
+        this.element.style.position = "absolute";
 
         // Set tile content and colour scheme
         const { content='', foreground='#ffffff', background='#000000' } = tileOptions;
@@ -57,6 +56,10 @@ export class Tile {
         // Create contentElement if it doesn't already exist
         if (!this.contentElement) {
             this.contentElement = document.createElement('div');
+            this.contentElement.style.position = "absolute";
+            this.contentElement.style.left = "50%";
+            this.contentElement.style.top = "50%";
+            this.contentElement.style.transform = "translate(-50%, -50%)";
             this.element.appendChild(this.contentElement);
         }
         // Only update if the new and old content don't match

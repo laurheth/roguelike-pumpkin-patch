@@ -27,21 +27,6 @@ module.exports = targets.map(target=>({
                 use: 'ts-loader',
                 exclude: /node_modules/,
             },
-            // Load SCSS
-            {
-                test: /\.s[ac]ss$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            // Prefer using dart-sass over node-sass
-                            implementation: require('sass'),
-                        }
-                    }
-                ]
-            },
         ],
     },
     // Recognize both .ts and .js extensions
