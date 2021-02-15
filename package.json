@@ -4,6 +4,7 @@
   "description": "\"# roguelike-pumpkin-patch\"",
   "main": "dist/roguelike-pumpkin-patch.js",
   "module": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "bundle": "webpack",
@@ -28,5 +29,9 @@
     "typescript": "^4.1.5",
     "webpack": "^5.21.2",
     "webpack-cli": "^4.5.0"
-  }
+  },
+  "files": [
+    "dist",
+    "lib"
+  ]
 }
