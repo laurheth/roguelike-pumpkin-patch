@@ -1,4 +1,4 @@
-import { WeightedItem } from './RandomInterfaces';
+import { WeightedItem } from './RandomInterfaces.js';
 
 /** Random generator */
 export class Random {

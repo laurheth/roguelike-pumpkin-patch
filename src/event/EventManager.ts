@@ -1,4 +1,4 @@
-import { EventManagerParams, Event, QueuedEvent } from './EventManagerInterfaces';
+import { EventManagerParams, Event, QueuedEvent } from './EventManagerInterfaces.js';
 
 /** Event manager, to keep track of turns */
 export class EventManager {

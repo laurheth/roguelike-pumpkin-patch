@@ -1,4 +1,4 @@
-import { TileSize, Position, TileOptions } from './DisplayInterfaces';
+import { TileSize, Position, TileOptions } from './DisplayInterfaces.js';
 
 /** Class to keep track of each individual tile in the display */
 export class Tile {
