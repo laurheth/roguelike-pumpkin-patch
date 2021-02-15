@@ -1,5 +1,4 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const TsDeclarationWebpackPlugin = require('ts-declaration-webpack-plugin');
 
 const path = require('path');
 
@@ -57,7 +56,6 @@ module.exports = targets.map(target=>({
         libraryTarget: "umd"
     },
     plugins: [
-        new TsDeclarationWebpackPlugin(),
     ]
 }));
 

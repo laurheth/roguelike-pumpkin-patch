@@ -1,18 +1,21 @@
 {
     "compilerOptions": {
-      "outDir": "./dist/",
+      "outDir": "./lib/",
       "sourceMap": true,
       "noImplicitAny": true,
       "module": "es6",
       "target": "es5",
       "allowJs": true,
-      "baseUrl": "./src",
+      // "baseUrl": "./src",
       "typeRoots": [
         "src/@customTypes",
         "node_modules/@types"
       ],
       "declaration": true,
       // "declarationMap": true,
-      "declarationDir": "./dist/"
-    }
+      // "declarationDir": "./dist/"
+    },
+    "files": [
+      "./src/index.ts"
+    ]
   }
