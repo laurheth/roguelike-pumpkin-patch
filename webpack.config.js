@@ -1,4 +1,5 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const TsDeclarationWebpackPlugin = require('ts-declaration-webpack-plugin');
 
 const path = require('path');
 
@@ -6,11 +7,19 @@ const path = require('path');
 const src='src';
 const dist='dist';
 
-module.exports = {
-    mode: 'development',
+const targets = [
+    {minimize: false, name:"roguelike-pumpkin-patch.js"},
+    {minimize: true, name:"roguelike-pumpkin-patch.min.js"}
+]
+
+module.exports = targets.map(target=>({
+    mode: 'production',
     // Entrypoint in ./src/scripts/index.ts
     entry: `./${src}/index.ts`,
-    devtool: 'inline-source-map',
+    // devtool: 'inline-source-map',
+    optimization: {
+        minimize: target.minimize
+    },
     module: {
         rules: [
             // Use ts-loader for TypeScript
@@ -42,11 +51,15 @@ module.exports = {
     },
     // Where to put the output
     output: {
-        filename: 'roguelike-pumpkin-patch.js',
+        filename: target.name,
         path: path.resolve(__dirname, dist),
+        library: "RoguelikePumpkinPatch",
+        libraryTarget: "umd"
     },
     plugins: [
-        // Cleanup the dist directory
-        new CleanWebpackPlugin(),
+        new TsDeclarationWebpackPlugin(),
     ]
-};
+}));
+
+// Cleanup the dist directory
+module.exports[0].plugins.push(new CleanWebpackPlugin());
