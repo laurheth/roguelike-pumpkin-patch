@@ -1,7 +1,7 @@
 {
   "name": "roguelike-pumpkin-patch",
   "version": "1.0.0",
-  "description": "\"# roguelike-pumpkin-patch\"",
+  "description": "A roguelike development library in JavaScript.",
   "main": "dist/roguelike-pumpkin-patch.js",
   "module": "lib/index.js",
   "types": "lib/index.d.ts",

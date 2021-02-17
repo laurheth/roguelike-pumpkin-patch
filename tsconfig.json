@@ -9,6 +9,7 @@
       "baseUrl": "./src",
       "declaration": true,
       "skipLibCheck": true,
+      "esModuleInterop": true,
     },
     "files": [
       "./src/index.ts"

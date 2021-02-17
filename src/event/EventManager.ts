@@ -71,11 +71,13 @@ export class EventManager {
         // Update the time
         this.time = thisEvent.time;
 
+        // If repeats is a number, reduce it.
+        if (typeof thisEvent.event.repeats === "number") {
+            thisEvent.event.repeats--;
+        }
+        
         // Check if it needs to repeat
         if (thisEvent.event.repeats) {
-            if (typeof thisEvent.event.repeats === "number") {
-                thisEvent.event.repeats--;
-            }
             // re-add to the queue
             this.add(thisEvent.event);
         }
