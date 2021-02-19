@@ -66,15 +66,24 @@ describe("Random number generation tests.", ()=>{
                 option:()=>output.push(3),
                 weight:3
             },
+            {
+                option:()=>output.push(4),
+                weight:4
+            },
         ];
 
-        for(let i=0;i<1000;i++) {
+        for(let i=0;i<5000;i++) {
             output.push((rng.getWeightedElement(array))());
         }
 
-        const one = output.filter(x=>x===1).reduce((x,y)=>x+y);
-        const two = output.filter(x=>x===2).reduce((x,y)=>x+y);
-        const three = output.filter(x=>x===3).reduce((x,y)=>x+y);
+        const one = output.filter(x=>x===1).reduce((x)=>x+1);
+        const two = output.filter(x=>x===2).reduce((x)=>x+1);
+        const three = output.filter(x=>x===3).reduce((x)=>x+1);
+        const four = output.filter(x=>x===4).reduce((x)=>x+1);
+
+        // RNG is hard to test. Using ranges to be "good enough".
+        expect(four/one).toBeGreaterThan(3);
+        expect(four/one).toBeLessThan(5);
 
         expect(three/one).toBeGreaterThan(2);
         expect(three/one).toBeLessThan(4);
@@ -83,7 +92,7 @@ describe("Random number generation tests.", ()=>{
         expect(two/one).toBeLessThan(3);
     });
 
-    test("Random elements from weighted array, integer weights", ()=>{
+    test("Random elements from weighted array, non-integer weights", ()=>{
         const array = [
             {
                 option:()=>output.push(1),
@@ -97,15 +106,24 @@ describe("Random number generation tests.", ()=>{
                 option:()=>output.push(3),
                 weight:3.9
             },
+            {
+                option:()=>output.push(4),
+                weight:5.2
+            },
         ];
 
-        for(let i=0;i<1000;i++) {
+        for(let i=0;i<5000;i++) {
             output.push((rng.getWeightedElement(array))());
         }
-        const one = output.filter(x=>x===1).reduce((x,y)=>x+y);
-        const two = output.filter(x=>x===2).reduce((x,y)=>x+y);
-        const three = output.filter(x=>x===3).reduce((x,y)=>x+y);
+        const one = output.filter(x=>x===1).reduce((x)=>x+1);
+        const two = output.filter(x=>x===2).reduce((x)=>x+1);
+        const three = output.filter(x=>x===3).reduce((x)=>x+1);
+        const four = output.filter(x=>x===4).reduce((x)=>x+1);
 
+        // RNG is hard to test. Using ranges to be "good enough".
+        expect(four/one).toBeGreaterThan(3);
+        expect(four/one).toBeLessThan(5);
+        
         expect(three/one).toBeGreaterThan(2);
         expect(three/one).toBeLessThan(4);
 
