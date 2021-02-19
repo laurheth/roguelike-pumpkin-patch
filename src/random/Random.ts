@@ -81,3 +81,5 @@ export class Random {
         throw new Error("No match found.");
     }
 }
+
+export default Random;
