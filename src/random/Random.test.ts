@@ -33,7 +33,7 @@ describe("Random number generation tests.", ()=>{
         expect(Math.abs(variance - expectedVariance)).toBeLessThan(expectedVariance);
     });
 
-    test("Just plain ol' getRandom", ()=>{
+    test("Check getRandom doesn't go out of bounds.", ()=>{
         for (let i=0;i<1000;i++) {
             output.push(rng.getRandom());
         }
@@ -60,7 +60,7 @@ describe("Random number generation tests.", ()=>{
         expect(Math.min(...output)).toBeGreaterThanOrEqual(0);
     });
 
-    test("Random elements from an array", ()=>{
+    test("Random elements from an array gives expected results.", ()=>{
         const array = [1,2,3,4];
 
         const reps = 5000;
