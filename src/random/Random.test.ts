@@ -14,6 +14,25 @@ describe("Random number generation tests.", ()=>{
         }
     });
 
+    test("Mean and standard deviation roughly what they should be?", ()=>{
+        const reps = 5000;
+        for (let i=0;i<reps;i++) {
+            output.push(rng.getRandom());
+        }
+
+        const total = output.reduce((x,y)=>x+y);
+
+        const mean = total / reps;
+
+        const variance = output.reduce((y,x)=>(y + Math.pow(x - mean,2))) / reps;
+
+        const expectedMean = 0.5;
+        const expectedVariance = 1/12;
+
+        expect(Math.abs(mean - expectedMean)).toBeLessThan(expectedVariance);
+        expect(Math.abs(variance - expectedVariance)).toBeLessThan(expectedVariance);
+    });
+
     test("Just plain ol' getRandom", ()=>{
         for (let i=0;i<1000;i++) {
             output.push(rng.getRandom());
@@ -44,12 +63,26 @@ describe("Random number generation tests.", ()=>{
     test("Random elements from an array", ()=>{
         const array = [1,2,3,4];
 
-        for(let i=0;i<1000;i++) {
+        const reps = 5000;
+
+        for(let i=0;i<reps;i++) {
             output.push(rng.getRandomElement(array));
         }
-        for (let i=1;i<=4;i++) {
-            expect(output.indexOf(i)).toBeGreaterThanOrEqual(0);
-        }
+
+        const one = output.filter(x=>x===1).reduce((x)=>x+1);
+        const two = output.filter(x=>x===2).reduce((x)=>x+1);
+        const three = output.filter(x=>x===3).reduce((x)=>x+1);
+        const four = output.filter(x=>x===4).reduce((x)=>x+1);
+
+        // Make sure every number is present, and not too much of an outlier.
+        expect(one).toBeGreaterThan(0.15*reps);
+        expect(two).toBeGreaterThan(0.15*reps);
+        expect(three).toBeGreaterThan(0.15*reps);
+        expect(four).toBeGreaterThan(0.15*reps);
+        expect(one).toBeLessThan(0.35*reps);
+        expect(two).toBeLessThan(0.35*reps);
+        expect(three).toBeLessThan(0.35*reps);
+        expect(four).toBeLessThan(0.35*reps);
     });
 
     test("Random elements from weighted array, integer weights", ()=>{
