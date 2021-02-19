@@ -1,4 +1,4 @@
-import { EventManagerParams, Event, QueuedEvent } from './EventManagerInterfaces.js';
+import { EventManagerParams, ManagedEvent, QueuedEvent, Actor } from './EventManagerInterfaces.js';
 
 /** Event manager, to keep track of turns */
 export class EventManager {
@@ -20,7 +20,18 @@ export class EventManager {
     };
 
     /** Add an event to the queue */
-    add(event: Event) {
+    add(addedEvent: ManagedEvent|Actor|(()=>Promise<any>|void)) {
+        const event:ManagedEvent = {};
+
+        // Determine type of the input, and handle accordingly
+        if (addedEvent instanceof Function) {
+            event.callback = addedEvent;
+        } else if ("act" in addedEvent) {
+            event.actor = addedEvent;
+        } else {
+            Object.assign(event, addedEvent);
+        }
+
         // Assume repeating if an actor was provided
         if (typeof event.repeats === "undefined" && event.actor) {
             event.repeats=true;
@@ -107,6 +118,11 @@ export class EventManager {
         matches.forEach(match=>{
             this.queue.splice(match,1);
         });
+    }
+
+    /** Determine the number of queued events in the queue. */
+    get length() {
+        return this.queue.length;
     }
 }
 
