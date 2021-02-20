@@ -1,7 +1,7 @@
 import { EventManagerParams, ManagedEvent, QueuedEvent, Actor } from './EventManagerInterfaces.js';
 
 /** Event manager, to keep track of turns */
-export class EventManager {
+export default class EventManager {
 
     readonly type: "simple" | "complex";
     private queue: Array<QueuedEvent>;
@@ -125,5 +125,3 @@ export class EventManager {
         return this.queue.length;
     }
 }
-
-export default EventManager;

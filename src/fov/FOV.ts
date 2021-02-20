@@ -8,7 +8,7 @@ interface Shadow {
 }
 
 /** Field of view */
-export class FOV {
+export default class FOV {
 
     private canSee:canSee;
     private range:number;

@@ -2,7 +2,7 @@ import { DisplayParams, TileSize, Dimension, TileOptions, Position } from './Dis
 import { Tile } from './Tile.js';
 
 /** Display class, to create and control a display */
-export class Display {
+export default class Display {
     private _width: number;
     private _height: number;
     private target: HTMLDivElement;
@@ -223,4 +223,3 @@ export class Display {
     };
 };
 
-export default Display;

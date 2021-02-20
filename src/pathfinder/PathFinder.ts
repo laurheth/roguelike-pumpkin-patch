@@ -20,7 +20,7 @@ interface PathFinderParams {
 }
 
 /** Pathfinder to determine how to travel from one point to another */
-export class PathFinder {
+export default class PathFinder {
     private canPass:canPass;
     private metric:metric;
     private maxIterations:number;

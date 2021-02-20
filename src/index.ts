@@ -1,5 +1,5 @@
-export {Display} from './display/Display.js';
-export {EventManager} from './event/EventManager.js';
-export {Random} from './random/Random.js';
-export {PathFinder} from './pathfinder/PathFinder.js';
-export {FOV} from './fov/FOV.js';
+export {default as Display} from './display/Display.js';
+export {default as EventManager} from './event/EventManager.js';
+export {default as Random} from './random/Random.js';
+export {default as PathFinder} from './pathfinder/PathFinder.js';
+export {default as FOV} from './fov/FOV.js';
