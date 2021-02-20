@@ -29,7 +29,7 @@ export class Tile {
     ) {
         // Create necessary elements and apply classes
         this.element = document.createElement('div');
-        this.element.style.position = "absolute";
+        this.applyDefaultStyles();
 
         // Set tile content and colour scheme
         const { content='', foreground='#ffffff', background='#000000' } = tileOptions;
@@ -54,15 +54,7 @@ export class Tile {
 
     set content(newContent: string | HTMLElement) {
         // Create contentElement if it doesn't already exist
-        if (!this.contentElement) {
-            this.contentElement = document.createElement('div');
-            this.contentElement.style.position = "absolute";
-            this.contentElement.style.left = "50%";
-            this.contentElement.style.top = "50%";
-            this.contentElement.style.transform = "translate(-50%, -50%)";
-            this.contentElement.style.zIndex = "10";
-            this.element.appendChild(this.contentElement);
-        }
+        this.confirmContentElement();
         // Only update if the new and old content don't match
         if (this._content !== newContent) {
             // If content is a string, just add it
@@ -164,6 +156,29 @@ export class Tile {
         }
         if (typeof className === "string") {
             this.className = className;
+        }
+    }
+
+    /** Apply default styles */
+    applyDefaultStyles() {
+        // For the main tile div
+        this.element.style.position = "absolute";
+
+        // For the contentElement
+        this.confirmContentElement();
+
+        this.contentElement.style.position = "absolute";
+        this.contentElement.style.left = "50%";
+        this.contentElement.style.top = "50%";
+        this.contentElement.style.transform = "translate(-50%, -50%)";
+        this.contentElement.style.zIndex = "10";
+    }
+
+    /** Check if a contentElement exists, and if it doesn't, add it */
+    confirmContentElement() {
+        if (!this.contentElement) {
+            this.contentElement = document.createElement('div');
+            this.element.appendChild(this.contentElement);
         }
     }
 }

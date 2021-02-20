@@ -26,12 +26,7 @@ export default class Display {
 
         // Create the element for the display
         this.element = document.createElement('div');
-        
-        // Apply some default styles
-        this.element.style.position = "absolute";
-        this.element.style.left = "50%";
-        this.element.style.top = "50%";
-        this.element.style.transform = "translate(-50%, -50%)";
+
         this.element.setAttribute("aria-hidden", "true");
 
         this.background = (background) ? background : '#000000';
@@ -44,9 +39,9 @@ export default class Display {
             tileHeight: (tileHeight) ? tileHeight : (tileWidth) ? tileWidth : 16
         };
 
+        this.applyDefaultStyles();
+
         // Attach display to the target element
-        this.target.style.position = "relative";
-        this.target.style.overflow = "hidden";
         this.target.appendChild(this.element);
     };
 
@@ -222,5 +217,17 @@ export default class Display {
             tileHeight: maxTileSize
         }
     };
+
+    applyDefaultStyles() {
+        // Styles for the display
+        this.element.style.position = "absolute";
+        this.element.style.left = "50%";
+        this.element.style.top = "50%";
+        this.element.style.transform = "translate(-50%, -50%)";
+
+        // Styles for the target container
+        this.target.style.position = "relative";
+        this.target.style.overflow = "hidden";
+    }
 };
 
