@@ -48,13 +48,18 @@ describe("PathFinder tests.", ()=>{
         }
         return continuous;
     }
+    
+    // Length, including diagonal steps (i.e. [1,1] is longer than [1,0], even if it might still be one step)
+    const orthoLength = (path:Array<Array<number>>) => {
+        let total=0;
+        for (let i=1;i<path.length;i++) {
+            total += Math.abs(path[i][0] - path[i-1][0]) + Math.abs(path[i][1] - path[i-1][1]);
+        }
+        return total;
+    }
 
     const isOrthogonal = (path:Array<Array<number>>) => {
-        let continuous:boolean = true;
-        for (let i=1;i<path.length;i++) {
-            continuous &&= ((Math.abs(path[i][0] - path[i-1][0]) + Math.abs(path[i][1] - path[i-1][1])) <= 1);
-        }
-        return continuous;
+        return orthoLength(path) === path.length-1;
     }
 
     test("A straight line.",()=>{
@@ -91,6 +96,9 @@ describe("PathFinder tests.", ()=>{
         const orthoPath = pathfinder.findPath([1,1], [30,1],true);
         expect(orthoPath.length).toBe(33);
         expect(isContinuous(orthoPath) && isOrthogonal(orthoPath)).toBeTruthy();
+
+        // Make sure path doesn't take any unnecessary diagonals
+        expect(orthoLength(path)).toBeLessThanOrEqual(orthoPath.length);
     });
 
     test("A more complicated map.",()=>{
@@ -110,16 +118,19 @@ describe("PathFinder tests.", ()=>{
         expect(isContinuous(path)).toBeTruthy();
 
         // Do it again, but orthogonally.
-        path = pathfinder.findPath([1,1], [18,10],true);
+        let orthoPath = pathfinder.findPath([1,1], [18,10],true);
 
-        expect(path.length).toBe(28);
-        expect(isContinuous(path) && isOrthogonal(path)).toBeTruthy();
+        expect(orthoPath.length).toBe(28);
+        expect(isContinuous(orthoPath) && isOrthogonal(orthoPath)).toBeTruthy();
 
         // Reverse it, just in case
-        path = pathfinder.findPath([18,10], [1,1],true);
+        orthoPath = pathfinder.findPath([18,10], [1,1],true);
 
-        expect(path.length).toBe(28);
-        expect(isContinuous(path) && isOrthogonal(path)).toBeTruthy();
+        expect(orthoPath.length).toBe(28);
+        expect(isContinuous(orthoPath) && isOrthogonal(orthoPath)).toBeTruthy();
+
+        // Make sure path doesn't take any unnecessary diagonals
+        expect(orthoLength(path)).toBeLessThanOrEqual(orthoPath.length);
     });
 
     test("A more complicated map, different positions.",()=>{
@@ -139,16 +150,19 @@ describe("PathFinder tests.", ()=>{
         expect(isContinuous(path)).toBeTruthy();
 
         // Do it again, but orthogonally.
-        path = pathfinder.findPath([1,6], [18,6],true);
+        let orthoPath = pathfinder.findPath([1,6], [18,6],true);
 
-        expect(path.length).toBe(25);
-        expect(isContinuous(path) && isOrthogonal(path)).toBeTruthy();
+        expect(orthoPath.length).toBe(25);
+        expect(isContinuous(orthoPath) && isOrthogonal(orthoPath)).toBeTruthy();
 
         // Reverse it, just in case
-        path = pathfinder.findPath([18,6], [1,6],true);
+        orthoPath = pathfinder.findPath([18,6], [1,6],true);
 
-        expect(path.length).toBe(25);
-        expect(isContinuous(path) && isOrthogonal(path)).toBeTruthy();
+        expect(orthoPath.length).toBe(25);
+        expect(isContinuous(orthoPath) && isOrthogonal(orthoPath)).toBeTruthy();
+
+        // Make sure path doesn't take any unnecessary diagonals
+        expect(orthoLength(path)).toBeLessThanOrEqual(orthoPath.length);
     });
 
     test("A more complicated map, with water.",()=>{
@@ -169,15 +183,18 @@ describe("PathFinder tests.", ()=>{
         expect(isContinuous(path)).toBeTruthy();
 
         // Do it again, but orthogonally.
-        path = pathfinder.findPath([1,6], [14,6],true);
+        let orthoPath = pathfinder.findPath([1,6], [14,6],true);
 
-        expect(path.length).toBe(33);
-        expect(isContinuous(path) && isOrthogonal(path)).toBeTruthy();
+        expect(orthoPath.length).toBe(33);
+        expect(isContinuous(orthoPath) && isOrthogonal(orthoPath)).toBeTruthy();
 
         // Reverse it, just in case
-        path = pathfinder.findPath([14,6], [1,6],true);
+        orthoPath = pathfinder.findPath([14,6], [1,6],true);
 
-        expect(path.length).toBe(33);
-        expect(isContinuous(path) && isOrthogonal(path)).toBeTruthy();
+        expect(orthoPath.length).toBe(33);
+        expect(isContinuous(orthoPath) && isOrthogonal(orthoPath)).toBeTruthy();
+
+        // Make sure path doesn't take any unnecessary diagonals
+        expect(orthoLength(path)).toBeLessThanOrEqual(orthoPath.length);
     });
 });
