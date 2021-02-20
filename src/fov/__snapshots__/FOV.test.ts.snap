@@ -1,0 +1,3691 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test field of view. Range 2 FOV test. 1`] = `
+Array [
+  "###                 ",
+  "#@..                ",
+  "#..                 ",
+  " .                  ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 2`] = `
+Array [
+  " #                  ",
+  "#..                 ",
+  "#@.#                ",
+  "#..                 ",
+  " .                  ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 3`] = `
+Array [
+  "                    ",
+  " .                  ",
+  "#..                 ",
+  "#@.#                ",
+  "#..                 ",
+  " .                  ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 4`] = `
+Array [
+  "                    ",
+  "                    ",
+  " .                  ",
+  "#..                 ",
+  "#@.#                ",
+  "#..                 ",
+  " .                  ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 5`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  " .                  ",
+  "#..                 ",
+  "#@..                ",
+  "#..                 ",
+  " #                  ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 6`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  " .                  ",
+  "#..                 ",
+  "#@..                ",
+  "###                 ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 7`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "###                 ",
+  "#@..                ",
+  "###                 ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 8`] = `
+Array [
+  " ###                ",
+  "#.@..               ",
+  " ..#                ",
+  "  .                 ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 9`] = `
+Array [
+  "  #                 ",
+  " ...                ",
+  "#.@#                ",
+  " ..#                ",
+  "  .                 ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 10`] = `
+Array [
+  "                    ",
+  "  .                 ",
+  " ..#                ",
+  "#.@#                ",
+  " ..#                ",
+  "  .                 ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 11`] = `
+Array [
+  "                    ",
+  "                    ",
+  "  .                 ",
+  " ..#                ",
+  "#.@#                ",
+  " ...                ",
+  "  .                 ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 12`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "  .                 ",
+  " ..#                ",
+  "#.@..               ",
+  " ...                ",
+  "  #                 ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 13`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "  .                 ",
+  " ...                ",
+  "#.@..               ",
+  " ###                ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 14`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  " ###                ",
+  "#.@..               ",
+  " ###                ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 15`] = `
+Array [
+  "  ###               ",
+  " ..@..              ",
+  "  .#.               ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 16`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "  .#.               ",
+  " ..@..              ",
+  "  ...               ",
+  "   #                ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 17`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "   #                ",
+  "  ...               ",
+  " ..@..              ",
+  "  ##.               ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 18`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "  ##.               ",
+  " ..@..              ",
+  "  ###               ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 19`] = `
+Array [
+  "   ###              ",
+  "  ..@..             ",
+  "   #..              ",
+  "    .               ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 20`] = `
+Array [
+  "    #               ",
+  "   ...              ",
+  "   #@..             ",
+  "   #..              ",
+  "    .               ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 21`] = `
+Array [
+  "                    ",
+  "    .               ",
+  "   #..              ",
+  "   #@..             ",
+  "   #..              ",
+  "    .               ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 22`] = `
+Array [
+  "                    ",
+  "                    ",
+  "    .               ",
+  "   #..              ",
+  "   #@..             ",
+  "   ...              ",
+  "    .               ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 23`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "    .               ",
+  "   #..              ",
+  "  ..@..             ",
+  "   ...              ",
+  "    .               ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 24`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "    .               ",
+  "   ...              ",
+  "  ..@..             ",
+  "   #..              ",
+  "    .               ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 25`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "    .               ",
+  "   ...              ",
+  "   #@..             ",
+  "   ...              ",
+  "    #               ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 26`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "    .               ",
+  "   #..              ",
+  "  ..@..             ",
+  "   ###              ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 27`] = `
+Array [
+  "    ###             ",
+  "   ..@..            ",
+  "    ...             ",
+  "     .              ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 28`] = `
+Array [
+  "     #              ",
+  "    ...             ",
+  "   #.@..            ",
+  "    ...             ",
+  "     .              ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 29`] = `
+Array [
+  "                    ",
+  "     .              ",
+  "    ...             ",
+  "   #.@..            ",
+  "    ...             ",
+  "     .              ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 30`] = `
+Array [
+  "                    ",
+  "                    ",
+  "     .              ",
+  "    ...             ",
+  "   #.@..            ",
+  "    ...             ",
+  "     .              ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 31`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "     .              ",
+  "    ...             ",
+  "   ..@..            ",
+  "    ...             ",
+  "     .              ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 32`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "     .              ",
+  "    ...             ",
+  "   ..@..            ",
+  "    ...             ",
+  "     .              ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 33`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "     .              ",
+  "    ...             ",
+  "   #.@.#            ",
+  "    ...             ",
+  "     #              ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 34`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "     .              ",
+  "    ...             ",
+  "   ..@..            ",
+  "    ###             ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 35`] = `
+Array [
+  "     ###            ",
+  "    ..@..           ",
+  "     ...            ",
+  "      .             ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 36`] = `
+Array [
+  "      #             ",
+  "     ...            ",
+  "    ..@..           ",
+  "     ...            ",
+  "      .             ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 37`] = `
+Array [
+  "                    ",
+  "      .             ",
+  "     ...            ",
+  "    ..@..           ",
+  "     ...            ",
+  "      .             ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 38`] = `
+Array [
+  "                    ",
+  "                    ",
+  "      .             ",
+  "     ...            ",
+  "    ..@..           ",
+  "     ...            ",
+  "      .             ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 39`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "      .             ",
+  "     ...            ",
+  "    ..@..           ",
+  "     ...            ",
+  "      .             ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 40`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "      .             ",
+  "     ...            ",
+  "    ..@..           ",
+  "     ..#            ",
+  "      .             ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 41`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "      .             ",
+  "     ...            ",
+  "    ..@#            ",
+  "     ...            ",
+  "      #             ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 42`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "      .             ",
+  "     ..#            ",
+  "    ..@..           ",
+  "     ###            ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 43`] = `
+Array [
+  "      ###           ",
+  "     ..@..          ",
+  "      ...           ",
+  "       .            ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 44`] = `
+Array [
+  "       #            ",
+  "      ...           ",
+  "     ..@.#          ",
+  "      ...           ",
+  "       .            ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 45`] = `
+Array [
+  "                    ",
+  "       .            ",
+  "      ...           ",
+  "     ..@.#          ",
+  "      ...           ",
+  "       .            ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 46`] = `
+Array [
+  "                    ",
+  "                    ",
+  "       .            ",
+  "      ...           ",
+  "     ..@.#          ",
+  "      ...           ",
+  "       .            ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 47`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "       .            ",
+  "      ...           ",
+  "     ..@..          ",
+  "      ...           ",
+  "       #            ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 48`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "       .            ",
+  "      ...           ",
+  "     ..@.#          ",
+  "      .##           ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 49`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "      .##           ",
+  "     ..@.#          ",
+  "      ###           ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 50`] = `
+Array [
+  "       ###          ",
+  "      ..@..         ",
+  "       ..#          ",
+  "        .           ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 51`] = `
+Array [
+  "        #           ",
+  "       ...          ",
+  "      ..@#          ",
+  "       ..#          ",
+  "        .           ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 52`] = `
+Array [
+  "                    ",
+  "        .           ",
+  "       ..#          ",
+  "      ..@#          ",
+  "       ..#          ",
+  "        .           ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 53`] = `
+Array [
+  "                    ",
+  "                    ",
+  "        .           ",
+  "       ..#          ",
+  "      ..@#          ",
+  "       ...          ",
+  "        .           ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 54`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "        .           ",
+  "       ..#          ",
+  "      ..@..         ",
+  "       ..#          ",
+  "        #           ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 55`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "        .           ",
+  "       ...          ",
+  "      ..@#          ",
+  "       ###          ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 56`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "       ###          ",
+  "      ..@#          ",
+  "       ###          ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 57`] = `
+Array [
+  "        ###         ",
+  "       ..@..        ",
+  "        .#.         ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 58`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "        .#.         ",
+  "       ..@..        ",
+  "        .#.         ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 59`] = `
+Array [
+  "         ###        ",
+  "        ..@..       ",
+  "         #..        ",
+  "          #         ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 60`] = `
+Array [
+  "          #         ",
+  "         ...        ",
+  "         #@..       ",
+  "         ###        ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 61`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "         ###        ",
+  "         #@..       ",
+  "         ...        ",
+  "          .         ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 62`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "          #         ",
+  "         #..        ",
+  "        ..@..       ",
+  "         #..        ",
+  "          .         ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 63`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "          .         ",
+  "         ...        ",
+  "         #@..       ",
+  "         #..        ",
+  "          .         ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 64`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "          .         ",
+  "         #..        ",
+  "         #@..       ",
+  "         #..        ",
+  "          #         ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 65`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "          .         ",
+  "         #..        ",
+  "         #@..       ",
+  "         ###        ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 66`] = `
+Array [
+  "          ###       ",
+  "         ..@..      ",
+  "          ...       ",
+  "           #        ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 67`] = `
+Array [
+  "           #        ",
+  "          ...       ",
+  "         #.@..      ",
+  "          ##.       ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 68`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "          ##.       ",
+  "         #.@..      ",
+  "          ...       ",
+  "           .        ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 69`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "           #        ",
+  "          ...       ",
+  "         ..@..      ",
+  "          ...       ",
+  "           .        ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 70`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "           .        ",
+  "          ...       ",
+  "         #.@..      ",
+  "          ...       ",
+  "           .        ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 71`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "           .        ",
+  "          ...       ",
+  "         #.@..      ",
+  "          ...       ",
+  "           #        ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 72`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "           .        ",
+  "          ...       ",
+  "         #.@..      ",
+  "          ###       ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 73`] = `
+Array [
+  "           ###      ",
+  "          ..@..     ",
+  "           ...      ",
+  "            .       ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 74`] = `
+Array [
+  "            #       ",
+  "           ...      ",
+  "          ..@.#     ",
+  "           #..      ",
+  "            .       ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 75`] = `
+Array [
+  "                    ",
+  "            .       ",
+  "           ...      ",
+  "           #@..     ",
+  "           ...      ",
+  "            .       ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 76`] = `
+Array [
+  "                    ",
+  "                    ",
+  "            .       ",
+  "           #..      ",
+  "          ..@..     ",
+  "           ...      ",
+  "            .       ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 77`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "            .       ",
+  "           ...      ",
+  "          ..@.#     ",
+  "           ...      ",
+  "            .       ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 78`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "            .       ",
+  "           ...      ",
+  "          ..@..     ",
+  "           ...      ",
+  "            .       ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 79`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "            .       ",
+  "           ...      ",
+  "          ..@.#     ",
+  "           ...      ",
+  "            #       ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 80`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "            .       ",
+  "           ...      ",
+  "          ..@..     ",
+  "           ###      ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 81`] = `
+Array [
+  "            ###     ",
+  "           ..@..    ",
+  "            ..#     ",
+  "             .      ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 82`] = `
+Array [
+  "             #      ",
+  "            ...     ",
+  "           ..@#     ",
+  "            ...     ",
+  "             .      ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 83`] = `
+Array [
+  "                    ",
+  "             .      ",
+  "            ..#     ",
+  "           #.@.#    ",
+  "            ...     ",
+  "             .      ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 84`] = `
+Array [
+  "                    ",
+  "                    ",
+  "             .      ",
+  "            ...     ",
+  "           ..@..    ",
+  "            ..#     ",
+  "             .      ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 85`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "             .      ",
+  "            ...     ",
+  "           ..@#     ",
+  "            ...     ",
+  "             .      ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 86`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "             .      ",
+  "            ..#     ",
+  "           ..@..    ",
+  "            ..#     ",
+  "             .      ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 87`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "             .      ",
+  "            ...     ",
+  "           ..@#     ",
+  "            ...     ",
+  "             #      ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 88`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "             .      ",
+  "            ..#     ",
+  "           ..@..    ",
+  "            ###     ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 89`] = `
+Array [
+  "             ###    ",
+  "            ..@..   ",
+  "             .#.    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 90`] = `
+Array [
+  "                    ",
+  "                    ",
+  "             .#.    ",
+  "            ..@#    ",
+  "             ...    ",
+  "              #     ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 91`] = `
+Array [
+  "                    ",
+  "                    ",
+  "              #     ",
+  "             ..#    ",
+  "            ..@..   ",
+  "             .#.    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 92`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "             .#.    ",
+  "            ..@..   ",
+  "             .#.    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 93`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "             .#.    ",
+  "            ..@..   ",
+  "             ###    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 94`] = `
+Array [
+  "              ###   ",
+  "             ..@..  ",
+  "              #..   ",
+  "               #    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 95`] = `
+Array [
+  "               #    ",
+  "              ...   ",
+  "              #@..  ",
+  "              .##   ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 96`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "              .##   ",
+  "             ..@..  ",
+  "              #..   ",
+  "               .    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 97`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "               #    ",
+  "              ...   ",
+  "              #@..  ",
+  "              ...   ",
+  "               .    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 98`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "               .    ",
+  "              #..   ",
+  "             ..@..  ",
+  "              #..   ",
+  "               .    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 99`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "               .    ",
+  "              ...   ",
+  "              #@..  ",
+  "              ...   ",
+  "               #    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 100`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "               .    ",
+  "              #..   ",
+  "             ..@..  ",
+  "              ###   ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 101`] = `
+Array [
+  "               ###  ",
+  "              ..@.. ",
+  "               ...  ",
+  "                #   ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 102`] = `
+Array [
+  "                #   ",
+  "               ...  ",
+  "              #.@.. ",
+  "               ##.  ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 103`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "               ##.  ",
+  "              ..@.. ",
+  "               ...  ",
+  "                .   ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 104`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                #   ",
+  "               ...  ",
+  "              #.@.. ",
+  "               ...  ",
+  "                .   ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 105`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                .   ",
+  "               ...  ",
+  "              ..@.. ",
+  "               ...  ",
+  "                .   ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 106`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                .   ",
+  "               ...  ",
+  "              #.@.. ",
+  "               ...  ",
+  "                #   ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 107`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                .   ",
+  "               ...  ",
+  "              ..@.. ",
+  "               ###  ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 108`] = `
+Array [
+  "                ### ",
+  "               ..@.#",
+  "                ... ",
+  "                 .  ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 109`] = `
+Array [
+  "                 #  ",
+  "                ... ",
+  "               ..@.#",
+  "                #.. ",
+  "                 .  ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 110`] = `
+Array [
+  "                    ",
+  "                 .  ",
+  "                ... ",
+  "                #@.#",
+  "                ... ",
+  "                 .  ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 111`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                 .  ",
+  "                #.. ",
+  "               ..@.#",
+  "                ... ",
+  "                 .  ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 112`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                 .  ",
+  "                ... ",
+  "               ..@.#",
+  "                ... ",
+  "                 .  ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 113`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                 .  ",
+  "                ... ",
+  "               ..@.#",
+  "                ... ",
+  "                 .  ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 114`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                 .  ",
+  "                ... ",
+  "               ..@.#",
+  "                ... ",
+  "                 #  ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 115`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                 .  ",
+  "                ... ",
+  "               ..@.#",
+  "                ### ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 116`] = `
+Array [
+  "                 ###",
+  "                ..@#",
+  "                 ..#",
+  "                  . ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 117`] = `
+Array [
+  "                  # ",
+  "                 ..#",
+  "                ..@#",
+  "                 ..#",
+  "                  . ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 118`] = `
+Array [
+  "                    ",
+  "                  . ",
+  "                 ..#",
+  "                #.@#",
+  "                 ..#",
+  "                  . ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 119`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                  . ",
+  "                 ..#",
+  "                ..@#",
+  "                 ..#",
+  "                  . ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 120`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                  . ",
+  "                 ..#",
+  "                ..@#",
+  "                 ..#",
+  "                  . ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 121`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                  . ",
+  "                 ..#",
+  "                ..@#",
+  "                 ..#",
+  "                  . ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 122`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                  . ",
+  "                 ..#",
+  "                ..@#",
+  "                 ..#",
+  "                  # ",
+]
+`;
+
+exports[`Test field of view. Range 2 FOV test. 123`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                  . ",
+  "                 ..#",
+  "                ..@#",
+  "                 ###",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 1`] = `
+Array [
+  "#########           ",
+  "#@........          ",
+  "#..#.....           ",
+  "#..#                ",
+  "#..#                ",
+  "#...                ",
+  "#...                ",
+  "####.               ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 2`] = `
+Array [
+  "####                ",
+  "#...                ",
+  "#@.#                ",
+  "#..#                ",
+  "#..#                ",
+  "#...                ",
+  "#...                ",
+  "####.               ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 3`] = `
+Array [
+  "#####               ",
+  "#...                ",
+  "#..#                ",
+  "#@.#                ",
+  "#..#                ",
+  "#...                ",
+  "#....               ",
+  "####..              ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 4`] = `
+Array [
+  "####                ",
+  "#...                ",
+  "#..#                ",
+  "#..#                ",
+  "#@.#                ",
+  "#.....              ",
+  "#.......            ",
+  "####...#            ",
+  "     ...            ",
+  "      ##            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 5`] = `
+Array [
+  "####                ",
+  "#...                ",
+  "#..#                ",
+  "#..#                ",
+  "#..#.....           ",
+  "#@........          ",
+  "#........           ",
+  "####...##           ",
+  "      ..            ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 6`] = `
+Array [
+  "####                ",
+  "#...                ",
+  "#..#                ",
+  "#..#  ...           ",
+  "#..#.....           ",
+  "#........           ",
+  "#@.......#          ",
+  "####...##           ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 7`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "####...##           ",
+  "#@.......#          ",
+  "#########           ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 8`] = `
+Array [
+  "##########          ",
+  "#.@........         ",
+  "#..#.....#          ",
+  "#..#    .#          ",
+  "#..#                ",
+  "#...                ",
+  "#...                ",
+  "####                ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 9`] = `
+Array [
+  "#####               ",
+  "#....               ",
+  "#.@#                ",
+  "#..#                ",
+  "#..#                ",
+  "#...                ",
+  "#...                ",
+  "####                ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 10`] = `
+Array [
+  "####                ",
+  "#...                ",
+  "#..#                ",
+  "#.@#                ",
+  "#..#                ",
+  "#...                ",
+  "#...                ",
+  "####                ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 11`] = `
+Array [
+  "####                ",
+  "#...                ",
+  "#..#                ",
+  "#..#                ",
+  "#.@#                ",
+  "#....               ",
+  "#.....              ",
+  "####...             ",
+  "    .. .            ",
+  "     ###            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 12`] = `
+Array [
+  "####                ",
+  "#...                ",
+  "#..#                ",
+  "#..#    .#          ",
+  "#..#.....#          ",
+  "#.@........         ",
+  "#........#          ",
+  "####...###          ",
+  "     ...            ",
+  "      ##            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 13`] = `
+Array [
+  "####                ",
+  "#...   ..           ",
+  "#..#  ...           ",
+  "#..# ....#          ",
+  "#..#.....#          ",
+  "#.........          ",
+  "#.@......#          ",
+  "####...###          ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 14`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "####...###          ",
+  "#.@......#          ",
+  "##########          ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 15`] = `
+Array [
+  "###########         ",
+  "#..@........        ",
+  "#..#.....#.         ",
+  "#.. .....#          ",
+  "#.   ....#          ",
+  "      ....          ",
+  "       ..#          ",
+  "        #           ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 16`] = `
+Array [
+  "       ###          ",
+  "      ....          ",
+  "#.   ....#          ",
+  "#.. .....#          ",
+  "#..#.....#.         ",
+  "#..@........        ",
+  "#........#.         ",
+  "####...###          ",
+  "    ....            ",
+  "    ####            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 17`] = `
+Array [
+  "     ####           ",
+  "#    .....          ",
+  "  . .....#          ",
+  "#.. .....#          ",
+  "#..#.....#          ",
+  "#.........          ",
+  "#..@.....#          ",
+  "####...###          ",
+  "    ....            ",
+  "     ###            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 18`] = `
+Array [
+  "                    ",
+  "                    ",
+  "        .           ",
+  "       ..#          ",
+  "      ...#          ",
+  "     .....          ",
+  "    .....           ",
+  "####...###          ",
+  "#..@.....#          ",
+  "##########          ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 19`] = `
+Array [
+  "############        ",
+  "#...@........       ",
+  "#..#.....#..        ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "   .......          ",
+  "   ......#          ",
+  "   #...###          ",
+  "   .....            ",
+  "    #               ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 20`] = `
+Array [
+  "  ########          ",
+  "  ........          ",
+  "   #@....#          ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "   .......          ",
+  "   ......#          ",
+  "   #...###          ",
+  "   .....            ",
+  "   #####            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 21`] = `
+Array [
+  "   #######          ",
+  "   .......          ",
+  "   #.....#          ",
+  "   #@....#          ",
+  "   #.....#          ",
+  "   .......          ",
+  "   ......#          ",
+  "   #...###          ",
+  "   .....            ",
+  "   #####            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 22`] = `
+Array [
+  "   #######          ",
+  "   .......          ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "   #@....#          ",
+  "  ........          ",
+  " ........#          ",
+  " ###...###          ",
+  "   .....            ",
+  "   ######           ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 23`] = `
+Array [
+  "   #######          ",
+  "   .......          ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "#..#.....#..        ",
+  "#...@........       ",
+  "#........#..        ",
+  "####...###          ",
+  "   .....            ",
+  "   ######           ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 24`] = `
+Array [
+  "   #######          ",
+  "   .......          ",
+  "#  #.....#          ",
+  "#. #.....#          ",
+  "#..#.....#          ",
+  "#.........          ",
+  "#...@....#          ",
+  "####...###          ",
+  "   .....            ",
+  "   #####            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 25`] = `
+Array [
+  "   #####            ",
+  "   .......          ",
+  "#. #.....#          ",
+  " ..#.....#          ",
+  "#..#.....#          ",
+  " .........          ",
+  "  .......#          ",
+  "   #@..#            ",
+  "  ......            ",
+  "  ######            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 26`] = `
+Array [
+  "    #               ",
+  "   .....            ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "   .......          ",
+  "   ......           ",
+  "####...###          ",
+  "#...@....#          ",
+  "##########          ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 27`] = `
+Array [
+  "#############       ",
+  "#....@........      ",
+  "#..#.....#...       ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "   .......          ",
+  "   ......#.         ",
+  "  ##...###          ",
+  "   .....            ",
+  "     #              ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 28`] = `
+Array [
+  "   #######          ",
+  "   .......          ",
+  "   #.@...#          ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "   .......          ",
+  "   ......#          ",
+  "  ##...###          ",
+  "   .....            ",
+  "   #####            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 29`] = `
+Array [
+  "  ########          ",
+  "   .......          ",
+  "   #.....#          ",
+  "   #.@...#          ",
+  "   #.....#          ",
+  "   .......          ",
+  "  .......#          ",
+  " ###...###          ",
+  "   .....            ",
+  "   #####            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 30`] = `
+Array [
+  "   #######          ",
+  "   .......          ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "   #.@...#          ",
+  " .........          ",
+  "  .......#          ",
+  "# ##...###          ",
+  "#  .....            ",
+  "   #####            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 31`] = `
+Array [
+  "   ########         ",
+  "   .......          ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "#..#.....#...       ",
+  "#....@........      ",
+  "#........#...       ",
+  "####...###          ",
+  "   .....            ",
+  "   #####            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 32`] = `
+Array [
+  "   ########         ",
+  "   .......          ",
+  "   #.....#          ",
+  "#  #.....#          ",
+  "#..#.....#          ",
+  "#.........          ",
+  "#....@...#          ",
+  "####...###          ",
+  "   .....            ",
+  "  #######           ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 33`] = `
+Array [
+  "   ######           ",
+  "   .......          ",
+  "#  #.....#          ",
+  "#. #.....#          ",
+  "#..#.....#          ",
+  "#.........          ",
+  " ........#          ",
+  "   #.@.#            ",
+  "   .....            ",
+  "   #####            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 34`] = `
+Array [
+  "     #              ",
+  "   ......           ",
+  "   #.....#          ",
+  "   #.....#          ",
+  " ..#.....#          ",
+  "  .......           ",
+  "   .....            ",
+  "####...###          ",
+  "#....@...#          ",
+  "##########          ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 35`] = `
+Array [
+  "##############      ",
+  "#.....@........     ",
+  "#..#.....#....      ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "   .......          ",
+  "  .......#.         ",
+  "  ##...###          ",
+  "   .....            ",
+  "      #             ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 36`] = `
+Array [
+  "   #######          ",
+  "   .......          ",
+  "   #..@..#          ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "   .......          ",
+  "  .......#.         ",
+  " ###...###          ",
+  "   .....            ",
+  "   #####            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 37`] = `
+Array [
+  "   #######          ",
+  "   .......          ",
+  "   #.....#          ",
+  "   #..@..#          ",
+  "   #.....#          ",
+  "  ........          ",
+  "  .......#          ",
+  "  ##...###          ",
+  "   .....            ",
+  "   #####            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 38`] = `
+Array [
+  "  #########         ",
+  "   .......          ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "   #..@..#          ",
+  "#.........          ",
+  " ........#          ",
+  " ###...###          ",
+  "   .....            ",
+  "  ######            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 39`] = `
+Array [
+  "  #########         ",
+  "   .......          ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "#..#.....#....      ",
+  "#.....@.......#     ",
+  "#........#....      ",
+  "####...###          ",
+  "   .....            ",
+  "  ######            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 40`] = `
+Array [
+  "   #######          ",
+  "   .......          ",
+  "   #.....#          ",
+  "#  #.....#          ",
+  "#..#.....#          ",
+  "#.........          ",
+  "#.....@..#          ",
+  "####...###          ",
+  "   .....            ",
+  "   #####            ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 41`] = `
+Array [
+  "   #######          ",
+  "   .......          ",
+  "   #.....#          ",
+  "#. #.....#          ",
+  "#..#.....#          ",
+  "#.........          ",
+  "#........           ",
+  "   #..@#            ",
+  "   ......           ",
+  "   ######           ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 42`] = `
+Array [
+  "      #             ",
+  "   ......           ",
+  "   #.....           ",
+  "#. #....            ",
+  "#..#....            ",
+  " .......            ",
+  "  ......            ",
+  "####...###          ",
+  "#.....@..#          ",
+  "##########          ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 43`] = `
+Array [
+  "###############     ",
+  "#......@........    ",
+  "#..#.....#....#     ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "   .......          ",
+  "  .......#          ",
+  "  ##...###          ",
+  "    ...             ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 44`] = `
+Array [
+  "   #######          ",
+  "   .......          ",
+  "   #...@.#          ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "  ........          ",
+  "  .......#          ",
+  "  ##...###          ",
+  "   ....             ",
+  "    ###             ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 45`] = `
+Array [
+  "   ########         ",
+  "   .......          ",
+  "   #.....#          ",
+  "   #...@.#          ",
+  "   #.....#          ",
+  "  ........          ",
+  "  .......#.         ",
+  "  ##...###          ",
+  "   ....             ",
+  "  #####             ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 46`] = `
+Array [
+  "   #######          ",
+  "   .......          ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "   #...@.#          ",
+  "#.........          ",
+  "#........#          ",
+  "####...###          ",
+  "   ....             ",
+  "  #####             ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 47`] = `
+Array [
+  "  ########          ",
+  "   .......          ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "#..#.....#.....     ",
+  "#......@......#     ",
+  "#........#.....     ",
+  "####...###          ",
+  "   ....             ",
+  "   ####             ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 48`] = `
+Array [
+  "  ########          ",
+  "   .......          ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "#..#.....#          ",
+  "#.........          ",
+  "#......@.#          ",
+  "####...###          ",
+  "   ....             ",
+  "   ###              ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 49`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  " .                  ",
+  " ..#.               ",
+  "# ....              ",
+  "  .....             ",
+  "####...###          ",
+  "#......@.#          ",
+  "##########          ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 50`] = `
+Array [
+  " ###############    ",
+  "#.......@........   ",
+  " ..#.....#....#.    ",
+  "   #.....#    .     ",
+  "   #.....#          ",
+  "  ........          ",
+  "  .......#          ",
+  "   #...###          ",
+  "     ..             ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 51`] = `
+Array [
+  "   ########         ",
+  "   ........         ",
+  "   #....@#          ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "  ........          ",
+  "  .......#          ",
+  "  ##...###          ",
+  "   ....             ",
+  "     ##             ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 52`] = `
+Array [
+  "   #######          ",
+  "   .......          ",
+  "   #.....#          ",
+  "   #....@#          ",
+  "   #.....#          ",
+  " .........          ",
+  " ........#          ",
+  "  ##...###          ",
+  "   ....             ",
+  "   ###              ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 53`] = `
+Array [
+  "   #######          ",
+  "   .......          ",
+  "   #.....#          ",
+  "   #.....#          ",
+  "   #....@#          ",
+  " ..........         ",
+  " ........#.         ",
+  " ###...###          ",
+  "   ....             ",
+  "   ###              ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 54`] = `
+Array [
+  "   #######          ",
+  "   .......          ",
+  "   #.....#          ",
+  "   #.....#    .     ",
+  " ..#.....#.....     ",
+  "#.......@.....#     ",
+  " ........#.....     ",
+  " ###...###    #     ",
+  "   ...              ",
+  "   ##               ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 55`] = `
+Array [
+  "   #######          ",
+  "   .......          ",
+  "   #.....#          ",
+  "   #.....#          ",
+  " ..#.....#.         ",
+  " ..........         ",
+  "#.......@#          ",
+  " ###...###          ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 56`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  " ###...###          ",
+  "#.......@#          ",
+  " #########          ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 57`] = `
+Array [
+  "  ###############   ",
+  " ........@........  ",
+  "  .#.....#....#..   ",
+  "   #..... ##... #   ",
+  "   #....      . .   ",
+  "   ....             ",
+  "   ...              ",
+  "    .               ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 58`] = `
+Array [
+  "   ###              ",
+  "   ....             ",
+  "   #....      #.    ",
+  "   #..... ##...#    ",
+  "  .#.....#......    ",
+  " ........@....#     ",
+  "  .......#.....     ",
+  "  ##...## ....#     ",
+  "   ..      ....     ",
+  "            ###     ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 59`] = `
+Array [
+  "   ###############  ",
+  "  ........@........ ",
+  "   #.....#....#...  ",
+  "   #.    ###...#    ",
+  "             ...    ",
+  "              #..   ",
+  "                .   ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 60`] = `
+Array [
+  "        #######     ",
+  "        .......     ",
+  "         #@...#     ",
+  "         ###...     ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 61`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "         ###...##.  ",
+  "         #@........ ",
+  "        ......#...  ",
+  "        .#.....     ",
+  "         #....#     ",
+  "         #.....     ",
+  "         #######    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 62`] = `
+Array [
+  "                    ",
+  "              .     ",
+  "             .#.    ",
+  "   #.    ###...#    ",
+  "   #.....#......    ",
+  "  ........@...#     ",
+  "   ......#.....     ",
+  "   #.    #....#     ",
+  "         #.....     ",
+  "         ######     ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 63`] = `
+Array [
+  "                    ",
+  "                    ",
+  "            ..#.    ",
+  "         ###...#    ",
+  "        .#......    ",
+  "        ......#...  ",
+  "         #@........ ",
+  "         #....#...  ",
+  "         #.....     ",
+  "         ######     ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 64`] = `
+Array [
+  "                    ",
+  "                    ",
+  "            ..#.    ",
+  "         ###...#    ",
+  "         #......    ",
+  "         .....#     ",
+  "         #.....     ",
+  "         #@...#     ",
+  "         #.....     ",
+  "         ######     ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 65`] = `
+Array [
+  "                    ",
+  "            ..      ",
+  "            ..#.    ",
+  "         ###...#    ",
+  "         #.....     ",
+  "         .....#     ",
+  "         #.....     ",
+  "         #....#...  ",
+  "         #@........ ",
+  "         #########  ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 66`] = `
+Array [
+  "    ############### ",
+  "   ........@.......#",
+  "    .....#....#.... ",
+  "         ###...#    ",
+  "            .....   ",
+  "            ..#. .  ",
+  "                 .  ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 67`] = `
+Array [
+  "         ######     ",
+  "         ......     ",
+  "         #.@..#     ",
+  "         ###...#    ",
+  "            ....    ",
+  "             .#.. . ",
+  "                .   ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 68`] = `
+Array [
+  "                    ",
+  "             ..     ",
+  "            ..#.    ",
+  "         ###...##.. ",
+  "         #.@.......#",
+  "         .....#.... ",
+  "         #.....     ",
+  "         #....#     ",
+  "         #.....     ",
+  "         #######    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 69`] = `
+Array [
+  "              ##    ",
+  "            .       ",
+  "            ..#.    ",
+  "         ###...#    ",
+  "    .....#......    ",
+  "   ........@..#     ",
+  "    .....#.....     ",
+  "         #....#     ",
+  "         #.....     ",
+  "         #######    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 70`] = `
+Array [
+  "            #       ",
+  "            ...     ",
+  "            ..#.    ",
+  "         ###...#    ",
+  "         #......    ",
+  "         .....#.... ",
+  "         #.@.......#",
+  "         #....#.... ",
+  "         #.....     ",
+  "         ######     ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 71`] = `
+Array [
+  "            ###     ",
+  "            ...     ",
+  "            ..#.    ",
+  "         ###...#    ",
+  "        .#.....     ",
+  "         .....#     ",
+  "         #.....     ",
+  "         #.@..#     ",
+  "         #.....     ",
+  "         ######     ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 72`] = `
+Array [
+  "                    ",
+  "            ...     ",
+  "            ..#.    ",
+  "         ###...#    ",
+  "         #.....     ",
+  "         .....#     ",
+  "         #.....     ",
+  "         #....#.... ",
+  "         #.@.......#",
+  "         ########## ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 73`] = `
+Array [
+  "     ###############",
+  "    ........@......#",
+  "     ....#....#....#",
+  "         ###...     ",
+  "           .....    ",
+  "           ...#..   ",
+  "           ....     ",
+  "           ...#     ",
+  "           ....     ",
+  "            #       ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 74`] = `
+Array [
+  "         ######     ",
+  "         ......     ",
+  "         #..@.#     ",
+  "         ###...#    ",
+  "           ......   ",
+  "           ...#...  ",
+  "           ....  .  ",
+  "           ...#  .. ",
+  "          .....     ",
+  "          #####     ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 75`] = `
+Array [
+  "         #######    ",
+  "         ......     ",
+  "          ....#.    ",
+  "           #@..#    ",
+  "          ...... .. ",
+  "         .....#. . #",
+  "         #.....  . #",
+  "         #....#     ",
+  "         #.....     ",
+  "         ######     ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 76`] = `
+Array [
+  "           ####     ",
+  "           ....     ",
+  "           ...#.    ",
+  "         ###...##..#",
+  "         #..@......#",
+  "         .....#....#",
+  "         #.....     ",
+  "         #....#.    ",
+  "         #.....     ",
+  "         ######     ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 77`] = `
+Array [
+  "           ####     ",
+  "           ....     ",
+  "           ...#.    ",
+  "         ###...#    ",
+  "     ....#......    ",
+  "    ........@.#     ",
+  "     ....#.....     ",
+  "         #....#     ",
+  "         #.....     ",
+  "         ######     ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 78`] = `
+Array [
+  "           ####     ",
+  "           ....     ",
+  "           ...#.    ",
+  "         ###...#    ",
+  "         #.....     ",
+  "         .....#....#",
+  "         #..@......#",
+  "         #....#....#",
+  "         #.....     ",
+  "         #######    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 79`] = `
+Array [
+  "           ####     ",
+  "           ....     ",
+  "           ...#.    ",
+  "         ###...     ",
+  "         #.....     ",
+  "         .....#     ",
+  "         #.....     ",
+  "         #..@.#     ",
+  "         #.....     ",
+  "         ######     ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 80`] = `
+Array [
+  "            #       ",
+  "           ....     ",
+  "           ...#.    ",
+  "         ###...     ",
+  "        .#.....     ",
+  "         .....#.    ",
+  "         #.....     ",
+  "         #....#....#",
+  "         #..@......#",
+  "         ###########",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 81`] = `
+Array [
+  "      ##############",
+  "     ........@.....#",
+  "      ...#....#....#",
+  "         ###...    #",
+  "           ....     ",
+  "           ...#     ",
+  "          .....     ",
+  "          ....#     ",
+  "          .....     ",
+  "             #      ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 82`] = `
+Array [
+  "         #######    ",
+  "         .......    ",
+  "         #...@#     ",
+  "         ###...#    ",
+  "           .....    ",
+  "          ....#..   ",
+  "         #.......   ",
+  "         #....#  .. ",
+  "         #.....     ",
+  "          #####     ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 83`] = `
+Array [
+  "        # #####     ",
+  "          .....     ",
+  "         #....#.    ",
+  "           #.@.#    ",
+  "         #........  ",
+  "         .....#....#",
+  "         #..... ...#",
+  "         #....#  ..#",
+  "         #.....   .#",
+  "         ######     ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 84`] = `
+Array [
+  "         ######     ",
+  "          .....     ",
+  "           ...#.    ",
+  "         ###...##..#",
+  "         #...@.....#",
+  "         .....#....#",
+  "         #.....    #",
+  "         #....#     ",
+  "         #.....     ",
+  "         ######     ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 85`] = `
+Array [
+  "          #####     ",
+  "           ....     ",
+  "           ...#.    ",
+  "         ###...#    ",
+  "      ...#......    ",
+  "     ........@#     ",
+  "      ...#......    ",
+  "         #....#.    ",
+  "         #.....     ",
+  "         ######     ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 86`] = `
+Array [
+  "          #####     ",
+  "           ....     ",
+  "           ...#     ",
+  "         ###...     ",
+  "         #.....    #",
+  "         .....#....#",
+  "         #...@.....#",
+  "         #....#....#",
+  "         #.....    #",
+  "         ######     ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 87`] = `
+Array [
+  "           ####     ",
+  "           ....     ",
+  "           ...#     ",
+  "         ###...     ",
+  "         #.....     ",
+  "         .....#.    ",
+  "         #......    ",
+  "         #...@#     ",
+  "         #......    ",
+  "         #######    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 88`] = `
+Array [
+  "             #      ",
+  "           ....     ",
+  "           ...#     ",
+  "         ###...     ",
+  "         #.....     ",
+  "         .....#     ",
+  "         #.....    #",
+  "         #....#....#",
+  "         #...@.....#",
+  "         ###########",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 89`] = `
+Array [
+  "       #############",
+  "      ........@....#",
+  "       ..#....#....#",
+  "         ###.. ##..#",
+  "           ..      #",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 90`] = `
+Array [
+  "         ####       ",
+  "         .....      ",
+  "         #....#.    ",
+  "           #..@#    ",
+  "         #.......   ",
+  "         .....#...  ",
+  "         #.... .... ",
+  "         #.... ....#",
+  "         #...   ...#",
+  "         ####   ####",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 91`] = `
+Array [
+  "          ####      ",
+  "          ....      ",
+  "          ....#.    ",
+  "         ###...##..#",
+  "         #....@....#",
+  "         .....#....#",
+  "         #.... ....#",
+  "         #...   ...#",
+  "         #..     ..#",
+  "         ##       ##",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 92`] = `
+Array [
+  "                    ",
+  "                   #",
+  "                  .#",
+  "         ###.   #..#",
+  "         #.... ....#",
+  "         .....#....#",
+  "         #....@....#",
+  "         #....#....#",
+  "         #.... ....#",
+  "         ####   ####",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 93`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                    ",
+  "         ##       .#",
+  "         #..     ..#",
+  "         ....   ...#",
+  "         #.... ....#",
+  "         #....#....#",
+  "         #....@....#",
+  "         ###########",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 94`] = `
+Array [
+  "        ############",
+  "       ........@...#",
+  "        .#....#....#",
+  "         #    .##..#",
+  "                  .#",
+  "                   #",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 95`] = `
+Array [
+  "             #######",
+  "             ......#",
+  "              #@...#",
+  "              .##..#",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 96`] = `
+Array [
+  "          ##        ",
+  "          ...       ",
+  "          ....#     ",
+  "         ###...##..#",
+  "         #.....@...#",
+  "         .....#....#",
+  "         #    .....#",
+  "              #....#",
+  "              .....#",
+  "              ######",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 97`] = `
+Array [
+  "          ###       ",
+  "          . ..     #",
+  "           ...#   .#",
+  "            ...##..#",
+  "             ......#",
+  "              #@...#",
+  "             ......#",
+  "             .#....#",
+  "              .....#",
+  "              ######",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 98`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                 ..#",
+  "              .##..#",
+  "         #    .....#",
+  "         .....#....#",
+  "         #.....@...#",
+  "         #....#....#",
+  "         #    .....#",
+  "              ######",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 99`] = `
+Array [
+  "                    ",
+  "                    ",
+  "                 ..#",
+  "              .##..#",
+  "              .....#",
+  "             .#....#",
+  "             ......#",
+  "              #@...#",
+  "             ......#",
+  "             #######",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 100`] = `
+Array [
+  "                    ",
+  "                 .. ",
+  "                 ..#",
+  "              .##..#",
+  "              .....#",
+  "              #....#",
+  "         #    .....#",
+  "         #....#....#",
+  "         #.....@...#",
+  "         ###########",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 101`] = `
+Array [
+  "         ###########",
+  "        ........@..#",
+  "         #....#....#",
+  "              .##..#",
+  "                 ..#",
+  "                 .  ",
+  "                   #",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 102`] = `
+Array [
+  "              ######",
+  "              .....#",
+  "              #.@..#",
+  "              .##..#",
+  "                 ..#",
+  "                  .#",
+  "                    ",
+  "                    ",
+  "                    ",
+  "                    ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 103`] = `
+Array [
+  "                    ",
+  "                  .#",
+  "                 ..#",
+  "         ###...##..#",
+  "         #......@..#",
+  "         .....#....#",
+  "              .....#",
+  "             .#....#",
+  "              .....#",
+  "              ######",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 104`] = `
+Array [
+  "          ##       #",
+  "          ...    .  ",
+  "          ....   ..#",
+  "           #...##..#",
+  "            .......#",
+  "              #.@..#",
+  "              .....#",
+  "              #....#",
+  "              .....#",
+  "              ######",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 105`] = `
+Array [
+  "                 #  ",
+  "                 ..#",
+  "             .#  ..#",
+  "             ..##..#",
+  "              .....#",
+  "         .....#....#",
+  "         #......@..#",
+  "         #....#....#",
+  "              .....#",
+  "             #######",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 106`] = `
+Array [
+  "                 ###",
+  "                 ..#",
+  "                 ..#",
+  "              .##..#",
+  "              .....#",
+  "              #....#",
+  "              .....#",
+  "              #.@..#",
+  "              .....#",
+  "              ######",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 107`] = `
+Array [
+  "                    ",
+  "                 ..#",
+  "                 ..#",
+  "              .##..#",
+  "              .....#",
+  "             .#....#",
+  "              .....#",
+  "         #....#....#",
+  "         #......@..#",
+  "         ###########",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 108`] = `
+Array [
+  "          ##########",
+  "         ........@.#",
+  "          ....#....#",
+  "              .##..#",
+  "                ...#",
+  "                ...#",
+  "                ...#",
+  "                ...#",
+  "                ...#",
+  "                 #  ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 109`] = `
+Array [
+  "              ######",
+  "              .....#",
+  "              #..@.#",
+  "              .##..#",
+  "                ...#",
+  "                ...#",
+  "                ...#",
+  "                ...#",
+  "               ....#",
+  "               #####",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 110`] = `
+Array [
+  "              ######",
+  "              .....#",
+  "               ....#",
+  "                #@.#",
+  "               ....#",
+  "              #....#",
+  "              .....#",
+  "             .#....#",
+  "              .....#",
+  "              ######",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 111`] = `
+Array [
+  "                ####",
+  "                ...#",
+  "                ...#",
+  "          ##...##..#",
+  "         #.......@.#",
+  "          ....#....#",
+  "              .....#",
+  "              #....#",
+  "              .....#",
+  "             #######",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 112`] = `
+Array [
+  "                ####",
+  "                ...#",
+  "          . .   ...#",
+  "          # . .##..#",
+  "           .. .....#",
+  "              #..@.#",
+  "              .....#",
+  "              #....#",
+  "              .....#",
+  "             #######",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 113`] = `
+Array [
+  "                ####",
+  "           ..   ...#",
+  "            .   ...#",
+  "            ...##..#",
+  "             ......#",
+  "          ....#....#",
+  "         #.......@.#",
+  "          ....#....#",
+  "              .....#",
+  "              ######",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 114`] = `
+Array [
+  "                ####",
+  "                ...#",
+  "              # ...#",
+  "             ..##..#",
+  "              .....#",
+  "              #....#",
+  "              .....#",
+  "              #..@.#",
+  "              .....#",
+  "              ######",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 115`] = `
+Array [
+  "                 #  ",
+  "                ...#",
+  "                ...#",
+  "             ..##..#",
+  "              .....#",
+  "              #....#",
+  "              .....#",
+  "          ....#....#",
+  "         #.......@.#",
+  "          ##########",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 116`] = `
+Array [
+  "           #########",
+  "          ........@#",
+  "           ...#....#",
+  "              .##..#",
+  "                ...#",
+  "                ...#",
+  "               ....#",
+  "               ....#",
+  "               ....#",
+  "                  # ",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 117`] = `
+Array [
+  "              ######",
+  "              .....#",
+  "              #...@#",
+  "              .##..#",
+  "                ...#",
+  "               ....#",
+  "              .....#",
+  "             .#....#",
+  "              .....#",
+  "               #####",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 118`] = `
+Array [
+  "             # #####",
+  "               ....#",
+  "              #....#",
+  "                #.@#",
+  "              .....#",
+  "              #....#",
+  "              .....#",
+  "              #....#",
+  "              .....#",
+  "             #######",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 119`] = `
+Array [
+  "              ######",
+  "               ....#",
+  "                ...#",
+  "           #...##..#",
+  "          ........@#",
+  "           ...#....#",
+  "              .....#",
+  "              #....#",
+  "              .....#",
+  "             #######",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 120`] = `
+Array [
+  "               #####",
+  "                ...#",
+  "           ..   ...#",
+  "           #  .##..#",
+  "           .  .....#",
+  "              #...@#",
+  "              .....#",
+  "              #....#",
+  "              .....#",
+  "              ######",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 121`] = `
+Array [
+  "               #####",
+  "                ...#",
+  "             .  ...#",
+  "           # ..##..#",
+  "              .....#",
+  "           ...#....#",
+  "          ........@#",
+  "           ...#....#",
+  "              .....#",
+  "              ######",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 122`] = `
+Array [
+  "                ####",
+  "                ...#",
+  "            .   ...#",
+  "            . .##..#",
+  "             ......#",
+  "              #....#",
+  "              .....#",
+  "              #...@#",
+  "              .....#",
+  "              ######",
+]
+`;
+
+exports[`Test field of view. Range 8 FOV test. 123`] = `
+Array [
+  "                  # ",
+  "                ...#",
+  "              # ...#",
+  "             ..##..#",
+  "              .....#",
+  "              #....#",
+  "              .....#",
+  "           ...#....#",
+  "          ........@#",
+  "           #########",
+]
+`;
