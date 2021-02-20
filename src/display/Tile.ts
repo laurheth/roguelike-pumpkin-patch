@@ -60,6 +60,7 @@ export class Tile {
             this.contentElement.style.left = "50%";
             this.contentElement.style.top = "50%";
             this.contentElement.style.transform = "translate(-50%, -50%)";
+            this.contentElement.style.zIndex = "10";
             this.element.appendChild(this.contentElement);
         }
         // Only update if the new and old content don't match

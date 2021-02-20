@@ -32,6 +32,7 @@ export default class Display {
         this.element.style.left = "50%";
         this.element.style.top = "50%";
         this.element.style.transform = "translate(-50%, -50%)";
+        this.element.setAttribute("aria-hidden", "true");
 
         this.background = (background) ? background : '#000000';
         this.foreground = (foreground) ? foreground : '#ffffff';
