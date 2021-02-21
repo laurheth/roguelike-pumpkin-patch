@@ -11,6 +11,7 @@ export default class Display {
     private centerPosition: Position;
     private _background: string;
     private _foreground: string;
+    private useDefaultStyle: boolean;
 
     private _tileSize: TileSize;
 
@@ -20,7 +21,7 @@ export default class Display {
     constructor(
         parameters: DisplayParams
     ) {
-        const {target, width=1, height=1, background, foreground, tileWidth, tileHeight, ...rest} = parameters;
+        const {target, width=1, height=1, background, foreground, tileWidth, tileHeight, styleSheet="./roguelike-pumpkin-patch.css", ...rest} = parameters;
         // Set the target
         this.target = target;
 
@@ -39,10 +40,28 @@ export default class Display {
             tileHeight: (tileHeight) ? tileHeight : (tileWidth) ? tileWidth : 16
         };
 
-        this.applyDefaultStyles();
+        new Promise((resolve, reject)=>{
+            const link = document.createElement("link");
+            link.type = "text/css";
+            link.rel = "stylesheet";
+            link.onload = ()=>{
+                resolve(true);
+            };
 
-        // Attach display to the target element
-        this.target.appendChild(this.element);
+            link.onerror = ()=>{
+                reject("Failed to load CSS.");
+            };
+            link.href = styleSheet;
+
+            document.querySelector("head").appendChild(link);
+        }).catch((err)=>{
+            this.applyDefaultStyles();
+        }).finally(()=>{
+            // Attach display to the target element
+            this.target.appendChild(this.element);
+        });
+
+
     };
 
     /** Tile size */
@@ -228,6 +247,10 @@ export default class Display {
         // Styles for the target container
         this.target.style.position = "relative";
         this.target.style.overflow = "hidden";
+
+        this.tiles.forEach(tile=>tile.applyDefaultStyles());
+
+        this.useDefaultStyle = true;
     }
 };
 

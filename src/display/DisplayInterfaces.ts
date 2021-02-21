@@ -14,6 +14,8 @@ export interface DisplayParams {
     background?: string;
     /** Default foreground colour of the display */
     foreground?: string;
+    /** CSS stylesheet to use */
+    styleSheet?: string;
 }
 
 /** dimensions interface */
@@ -38,6 +40,7 @@ export interface TileOptions {
     background?: string;
     foreground?: string;
     className?:string;
+    useDefaultStyle?:boolean;
 }
 
 /** Position on the display */

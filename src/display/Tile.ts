@@ -29,13 +29,16 @@ export class Tile {
     ) {
         // Create necessary elements and apply classes
         this.element = document.createElement('div');
-        this.applyDefaultStyles();
-
+        
         // Set tile content and colour scheme
-        const { content='', foreground='#ffffff', background='#000000' } = tileOptions;
+        const { content='', foreground='#ffffff', background='#000000', useDefaultStyle=false } = tileOptions;
         this.content = content;
         this.foreground = foreground;
         this.background = background;
+        
+        if(useDefaultStyle) {
+            this.applyDefaultStyles();
+        }
 
         // Set the tile size
         this.tileWidth = (tileSize?.tileWidth) ? tileSize.tileWidth : 16;
@@ -167,11 +170,13 @@ export class Tile {
         // For the contentElement
         this.confirmContentElement();
 
-        this.contentElement.style.position = "absolute";
-        this.contentElement.style.left = "50%";
-        this.contentElement.style.top = "50%";
-        this.contentElement.style.transform = "translate(-50%, -50%)";
-        this.contentElement.style.zIndex = "10";
+        const style = this.contentElement.style;
+
+        style.position = "absolute";
+        style.left = "50%";
+        style.top = "50%";
+        style.transform = "translate(-50%, -50%)";
+        style.zIndex = "10";
     }
 
     /** Check if a contentElement exists, and if it doesn't, add it */
