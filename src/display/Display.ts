@@ -10,8 +10,6 @@ export default class Display {
     readonly element: HTMLDivElement;
     private tiles: Array<Tile>;
     private centerPosition: Position;
-    private _background: string;
-    private _foreground: string;
 
     private _tileSize: TileSize;
 
@@ -21,7 +19,7 @@ export default class Display {
     constructor(
         parameters: DisplayParams
     ) {
-        const {target, width=1, height=1, background, foreground, tileWidth, tileHeight, ...rest} = parameters;
+        const {target, width=1, height=1, tileWidth, tileHeight, ...rest} = parameters;
         // Set the target
         this.target = target;
         this.target.className = "pumpkin-container";

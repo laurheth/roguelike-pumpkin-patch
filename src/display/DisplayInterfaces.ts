@@ -10,10 +10,6 @@ export interface DisplayParams {
     tileWidth?: number;
     /** Optional height of each tile in pixels. */
     tileHeight?: number;
-    /** Default background colour of the display */
-    background?: string;
-    /** Default foreground colour of the display */
-    foreground?: string;
 }
 
 /** dimensions interface */

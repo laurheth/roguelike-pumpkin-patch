@@ -74,9 +74,51 @@ describe("Test the display.",()=>{
         expect(display.tileSize.tileHeight).toBe(50);
         expect(display.tileSize.tileWidth).toBe(50);
 
-        display.tileSize = {tileHeight:10, tileWidth:10};
+        display.tileSize = {tileHeight:20, tileWidth:20};
         display.dimensions = display.calculateDimensions(modelRect);
-        expect(display.dimensions.width).toBe(100);
-        expect(display.dimensions.height).toBe(50);
+        expect(display.dimensions.width).toBe(50);
+        expect(display.dimensions.height).toBe(25);
+    });
+
+    test("Test changing tile properties.", ()=>{
+        const display = new Display({target:target, width:10, height:10});
+        const tile = display.getTile(0,0);
+        const tileElement = tile.element;
+        display.setTile(0,0,{content:'@',foreground:'red',background:'gray',className:'test'});
+
+        expect(tile.content).toBe('@');
+        expect(tile.foreground).toBe('red');
+        expect(tile.background).toBe('gray');
+        expect(tileElement.classList.length).toBe(2);
+        expect(tileElement.className.includes('pumpkin-tile'));
+
+        display.updateTile(0,0,'#');
+        expect(tile.content).toBe('#');
+        expect(tile.foreground).toBe('red');
+        expect(tile.background).toBe('gray');
+        expect(tileElement.classList.length).toBe(2);
+        expect(tileElement.className.includes('pumpkin-tile'));
+
+        display.setTile(0,0,'$');
+        expect(tile.content).toBe('$');
+        expect(tile.foreground).not.toBe('red');
+        expect(tile.background).not.toBe('gray');
+        expect(tileElement.classList.length).toBe(1);
+        expect(tileElement.className.includes('pumpkin-tile'));
+
+        display.setTile(0,0,{background:'red'});
+        expect(tile.content).toBe('');
+        expect(tile.foreground).toBe('');
+        expect(tile.background).toBe('red');
+        expect(tileElement.classList.length).toBe(1);
+        expect(tileElement.className.includes('pumpkin-tile'));
+
+        const testContent = document.createElement('div');
+        testContent.appendChild(document.createTextNode('what'));
+        display.setTile(0,0,{content:testContent});
+        expect(tile.content).toBeInstanceOf(HTMLDivElement);
+
+        display.setTile(0,0,testContent);
+        expect(tile.content).toBeInstanceOf(HTMLDivElement);
     });
 });
