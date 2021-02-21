@@ -1,4 +1,4 @@
-// Default styling for the display.
+// Default styling for the display. This gets inserted into the document head, before other stylesheets (so that you can override them if desired!)
 const css = `
 .pumpkin-container {
     position: relative;

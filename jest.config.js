@@ -6,4 +6,8 @@ module.exports = {
     "/node_modules/"
   ],
   verbose: true,
+  moduleNameMapper: {
+    "./Tile.js":"./Tile.ts",
+    "./DisplayStyle.js":"./DisplayStyle.ts",
+  }
 };
