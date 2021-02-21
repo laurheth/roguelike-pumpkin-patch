@@ -53,4 +53,30 @@ describe("Test the display.",()=>{
 
         expect(document.body).toMatchSnapshot();
     });
+
+    test("Test resize calculators.", ()=>{
+        const display = new Display({target:target, width:10, height:10});
+
+        // Fake DOMRect for testing
+        const modelRect:DOMRect = {
+            right: 1000,
+            left: 0,
+            top: 500,
+            bottom: 0,
+            height: 500,
+            width: 1000,
+            x: 0,
+            y: 0,
+            toJSON: ()=>{}
+        };
+
+        display.tileSize = display.calculateTileSize(modelRect);
+        expect(display.tileSize.tileHeight).toBe(50);
+        expect(display.tileSize.tileWidth).toBe(50);
+
+        display.tileSize = {tileHeight:10, tileWidth:10};
+        display.dimensions = display.calculateDimensions(modelRect);
+        expect(display.dimensions.width).toBe(100);
+        expect(display.dimensions.height).toBe(50);
+    });
 });
