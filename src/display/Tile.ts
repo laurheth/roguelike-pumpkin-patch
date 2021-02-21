@@ -139,7 +139,11 @@ export class Tile {
     }
 
     set className(newClass:string) {
-        this.classList = newClass.split(" ");
+        if (newClass) {
+            this.classList = newClass.split(" ");
+        } else {
+            this.classList = [];
+        }
     }
 
     /** Get or set the list of classes */
@@ -151,7 +155,11 @@ export class Tile {
         if (!this._classList) {
             this._classList = [];
         }
-        if (newClassList.length !== this._classList.length || !newClassList.every(name=>this._classList.includes(name))) {
+        // Only add/remove classes if the two lists are actually different
+        // This is ugly, but changing the DOM is more expensive than this is.
+        if (newClassList.length !== this._classList.length ||
+            !newClassList.every(name=>this._classList.includes(name)) ||
+            !this._classList.every(name=>newClassList.includes(name))) {
             if (this._classList.length > 0) {
                 this.element.classList.remove(...this._classList);
             }

@@ -154,19 +154,30 @@ export default class Display {
         }
     };
 
+    /** Take input and format into TileOptions */
+    private formatTileOptions(input:TileOptions|string|HTMLElement): TileOptions {
+        if (typeof input === "string") {
+            return {content:input};
+        } else if (input instanceof HTMLElement) {
+            return {content:input};
+        } else {
+            return input;
+        }
+    }
+
     /** Set details for the specified tile */
-    setTile(x:number, y:number, newOptions:TileOptions) {
+    setTile(x:number, y:number, newOptions:TileOptions|string|HTMLElement) {
         const tile = this.getTile(x,y);
         if (tile) {
-            tile.setOptions(newOptions);
+            tile.setOptions(this.formatTileOptions(newOptions));
         }
     };
 
     /** Update details for the specified tile, preserving every unset property. */
-    updateTile(x:number, y:number, newOptions:TileOptions) {
+    updateTile(x:number, y:number, newOptions:TileOptions|string|HTMLElement) {
         const tile = this.getTile(x,y);
         if (tile) {
-            tile.updateOptions(newOptions);
+            tile.updateOptions(this.formatTileOptions(newOptions));
         }
     };
 
