@@ -29,16 +29,13 @@ export class Tile {
     ) {
         // Create necessary elements and apply classes
         this.element = document.createElement('div');
+        this.element.classList.add("pumpkin-tile");
         
         // Set tile content and colour scheme
-        const { content='', foreground='#ffffff', background='#000000', useDefaultStyle=false } = tileOptions;
+        const { content='', foreground='#ffffff', background='#000000', className="", ...rest } = tileOptions;
         this.content = content;
         this.foreground = foreground;
         this.background = background;
-        
-        if(useDefaultStyle) {
-            this.applyDefaultStyles();
-        }
 
         // Set the tile size
         this.tileWidth = (tileSize?.tileWidth) ? tileSize.tileWidth : 16;
@@ -47,7 +44,7 @@ export class Tile {
         // Set the tile position
         this.position = position;
 
-        this.className = "";
+        this.className = className;
     };
 
     /** Get or set the tile contents */
@@ -160,23 +157,6 @@ export class Tile {
         if (typeof className === "string") {
             this.className = className;
         }
-    }
-
-    /** Apply default styles */
-    applyDefaultStyles() {
-        // For the main tile div
-        this.element.style.position = "absolute";
-
-        // For the contentElement
-        this.confirmContentElement();
-
-        const style = this.contentElement.style;
-
-        style.position = "absolute";
-        style.left = "50%";
-        style.top = "50%";
-        style.transform = "translate(-50%, -50%)";
-        style.zIndex = "10";
     }
 
     /** Check if a contentElement exists, and if it doesn't, add it */

@@ -1,5 +1,6 @@
 import { DisplayParams, TileSize, Dimension, TileOptions, Position } from './DisplayInterfaces.js';
 import { Tile } from './Tile.js';
+import css from './DisplayStyle.js';
 
 /** Display class, to create and control a display */
 export default class Display {
@@ -11,7 +12,6 @@ export default class Display {
     private centerPosition: Position;
     private _background: string;
     private _foreground: string;
-    private useDefaultStyle: boolean;
 
     private _tileSize: TileSize;
 
@@ -21,13 +21,14 @@ export default class Display {
     constructor(
         parameters: DisplayParams
     ) {
-        const {target, width=1, height=1, background, foreground, tileWidth, tileHeight, styleSheet="./roguelike-pumpkin-patch.css", ...rest} = parameters;
+        const {target, width=1, height=1, background, foreground, tileWidth, tileHeight, ...rest} = parameters;
         // Set the target
         this.target = target;
+        this.target.className = "pumpkin-container";
 
         // Create the element for the display
         this.element = document.createElement('div');
-
+        this.element.className = "pumpkin-display";
         this.element.setAttribute("aria-hidden", "true");
 
         this.background = (background) ? background : '#000000';
@@ -40,28 +41,11 @@ export default class Display {
             tileHeight: (tileHeight) ? tileHeight : (tileWidth) ? tileWidth : 16
         };
 
-        new Promise((resolve, reject)=>{
-            const link = document.createElement("link");
-            link.type = "text/css";
-            link.rel = "stylesheet";
-            link.onload = ()=>{
-                resolve(true);
-            };
+        // Add style to the page for the display
+        this.applyDefaultStyles();
 
-            link.onerror = ()=>{
-                reject("Failed to load CSS.");
-            };
-            link.href = styleSheet;
-
-            document.querySelector("head").appendChild(link);
-        }).catch((err)=>{
-            this.applyDefaultStyles();
-        }).finally(()=>{
-            // Attach display to the target element
-            this.target.appendChild(this.element);
-        });
-
-
+        // Append to the container element
+        this.target.appendChild(this.element);
     };
 
     /** Tile size */
@@ -237,20 +221,22 @@ export default class Display {
         }
     };
 
+    /** Add the default styles to the head of the page. */
     applyDefaultStyles() {
-        // Styles for the display
-        this.element.style.position = "absolute";
-        this.element.style.left = "50%";
-        this.element.style.top = "50%";
-        this.element.style.transform = "translate(-50%, -50%)";
 
-        // Styles for the target container
-        this.target.style.position = "relative";
-        this.target.style.overflow = "hidden";
+        // Create the style element
+        const styles = document.createElement("style");
+        styles.type = "text/css";
+        styles.appendChild(document.createTextNode(css));
 
-        this.tiles.forEach(tile=>tile.applyDefaultStyles());
+        // Get the head of the page
+        const head = document.head;
 
-        this.useDefaultStyle = true;
+        // Find the first style or link element, and insert in front of it
+        const firstStyle = document.querySelector("style, link");
+        console.log(firstStyle);
+
+        head.insertBefore(styles, firstStyle);
     }
 };
 
