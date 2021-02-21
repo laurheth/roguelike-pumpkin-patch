@@ -38,7 +38,7 @@ export interface TileOptions {
     background?: string;
     foreground?: string;
     className?:string;
-    useDefaultStyle?:boolean;
+    classList?:Array<string>;
 }
 
 /** Position on the display */

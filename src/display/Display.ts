@@ -31,9 +31,6 @@ export default class Display {
         this.element.className = "pumpkin-display";
         this.element.setAttribute("aria-hidden", "true");
 
-        this.background = (background) ? background : '#000000';
-        this.foreground = (foreground) ? foreground : '#ffffff';
-
         // Set the display dimensions
         this.dimensions = {width, height};
         this.tileSize = {
@@ -88,27 +85,6 @@ export default class Display {
         }
     }
 
-    /** Background colour */
-    get background(): string {
-        return this._background;
-    };
-
-    set background(newBackground: string) {
-        this._background = newBackground;
-        this.element.style.background = newBackground;
-        this.target.style.background = newBackground;
-    };
-
-    /** Foreground colour */
-    get foreground(): string {
-        return this._foreground;
-    };
-
-    set foreground(newForeground: string) {
-        this._foreground = newForeground;
-        this.element.style.color = newForeground;
-    };
-
     /** Position to center the display view on */
     centerDisplay(x?: number, y?: number) {
         if (typeof x === "undefined" || typeof y === "undefined") {
@@ -152,8 +128,6 @@ export default class Display {
                 const newTile = new Tile(
                     {
                         content:'',
-                        background:this.background,
-                        foreground:this.foreground
                     },
                     {x:x,y:y},
                     this.tileSize
@@ -185,6 +159,14 @@ export default class Display {
         const tile = this.getTile(x,y);
         if (tile) {
             tile.setOptions(newOptions);
+        }
+    };
+
+    /** Update details for the specified tile, preserving every unset property. */
+    updateTile(x:number, y:number, newOptions:TileOptions) {
+        const tile = this.getTile(x,y);
+        if (tile) {
+            tile.updateOptions(newOptions);
         }
     };
 
@@ -234,7 +216,6 @@ export default class Display {
 
         // Find the first style or link element, and insert in front of it
         const firstStyle = document.querySelector("style, link");
-        console.log(firstStyle);
 
         head.insertBefore(styles, firstStyle);
     }

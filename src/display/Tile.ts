@@ -1,5 +1,7 @@
 import { TileSize, Position, TileOptions } from './DisplayInterfaces.js';
 
+const baseClassName = "pumpkin-tile";
+
 /** Class to keep track of each individual tile in the display */
 export class Tile {
     /** Contents of the tile  */
@@ -17,7 +19,7 @@ export class Tile {
     private _tileHeight: number;
     private _tileWidth: number;
 
-    private _className: string;
+    private _classList: Array<string>;
 
     /** Element this tile corresponds to in the DOM */
     readonly element: HTMLDivElement;
@@ -29,13 +31,18 @@ export class Tile {
     ) {
         // Create necessary elements and apply classes
         this.element = document.createElement('div');
-        this.element.classList.add("pumpkin-tile");
+        this.element.classList.add(baseClassName);
         
         // Set tile content and colour scheme
-        const { content='', foreground='#ffffff', background='#000000', className="", ...rest } = tileOptions;
+        const { content='', foreground='', background='', className='', classList = [], ...rest } = tileOptions;
         this.content = content;
         this.foreground = foreground;
         this.background = background;
+        if (classList.length > 0) {
+            this.classList = classList;
+        } else {
+            this.className = className;
+        }
 
         // Set the tile size
         this.tileWidth = (tileSize?.tileWidth) ? tileSize.tileWidth : 16;
@@ -44,7 +51,6 @@ export class Tile {
         // Set the tile position
         this.position = position;
 
-        this.className = className;
     };
 
     /** Get or set the tile contents */
@@ -129,32 +135,66 @@ export class Tile {
 
     /** Get or set the classname */
     get className():string {
-        return this._className;
+        return this.classList.join(" ");
     }
 
     set className(newClass:string) {
-        if (this._className && newClass !== this._className && this.element.classList.contains(this._className)) {
-            this.element.classList.remove(this._className);
+        this.classList = newClass.split(" ");
+    }
+
+    /** Get or set the list of classes */
+    get classList():Array<string> {
+        return [baseClassName, ...this._classList];
+    }
+
+    set classList(newClassList:Array<string>) {
+        if (!this._classList) {
+            this._classList = [];
         }
-        this._className=newClass;
-        if (newClass) {
-            this.element.classList.add(newClass);
+        if (newClassList.length !== this._classList.length || !newClassList.every(name=>this._classList.includes(name))) {
+            if (this._classList.length > 0) {
+                this.element.classList.remove(...this._classList);
+            }
+            this._classList = newClassList.filter(x=>x.trim() && x!==baseClassName);
+            if (newClassList.length > 0) {
+                // Set using the getter, to ensure baseClassName is still on the list.
+                this.element.classList.add(...this.classList);
+            }
         }
     }
 
     /** Set options for the tile */
     setOptions(newOptions: TileOptions) {
-        const {content, background,foreground,className } = newOptions;
-        if (content) {
+        const {content="", background="", foreground="", className="", classList} = newOptions;
+        
+        this.content = content;
+        this.background = background;
+        this.foreground = foreground;
+        if (classList) {
+            this.classList = classList;
+        } else {
+            this.className = className;
+        }
+    }
+
+    
+    /** 
+     * Update options for the tile
+     */
+    updateOptions(newOptions: TileOptions) {
+        const {content, background, foreground, className, classList} = newOptions;
+        if (typeof content !== "undefined") {
             this.content = content;
         }
-        if (background) {
+        if (typeof background !== "undefined") {
             this.background = background;
         }
-        if (foreground) {
+        if (typeof foreground !== "undefined") {
             this.foreground = foreground;
         }
-        if (typeof className === "string") {
+        if (classList && classList.length>0) {
+            this.classList = classList;
+        } else if (typeof className !== "undefined") {
             this.className = className;
         }
     }

@@ -3,6 +3,8 @@ const css = `
 .pumpkin-container {
     position: relative;
     overflow: hidden;
+    background-color: #000000;
+    color: #ffffff;
 }
 
 .pumpkin-display {
