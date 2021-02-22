@@ -3,7 +3,7 @@ import { TileSize, Position, TileOptions } from './DisplayInterfaces.js';
 const baseClassName = "pumpkin-tile";
 
 /** Class to keep track of each individual tile in the display */
-export class Tile {
+export default class Tile {
     /** Contents of the tile  */
     private contentElement: HTMLElement;
     private _content: string | HTMLElement;

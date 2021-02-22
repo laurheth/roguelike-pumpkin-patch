@@ -1,5 +1,5 @@
 import { DisplayParams, TileSize, Dimension, TileOptions, Position } from './DisplayInterfaces.js';
-import { Tile } from './Tile.js';
+import Tile from './Tile.js';
 import css from './DisplayStyle.js';
 
 /** Display class, to create and control a display */
