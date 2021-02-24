@@ -10,14 +10,23 @@
     "bundle": "webpack",
     "transpile": "tsc",
     "prebuild": "rm -rf dist && rm -rf lib",
-    "build": "npm run transpile && npm run bundle"
+    "build": "npm run transpile && npm run bundle",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/laurheth/roguelike-pumpkin-patch.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "roguelike",
+    "rogue",
+    "pumpkin",
+    "game"
+  ],
+  "author": {
+    "name": "Lauren Hetherington"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/laurheth/roguelike-pumpkin-patch/issues"
