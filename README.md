@@ -17,7 +17,7 @@ You can get the library by running (once it has actually been published... come 
 
 ```npm install roguelike-pumpkin-patch```
 
-If you want to use a bundle, in the `dist` directory, there's both a bundled `roguelike-pumpkin-patch.js`, and a minified `roguelike-pumpkin-patch.min.js`; link to whichever version you prefer in the head of your page. You can then access the entire library via the bundled `RoguelikePumpkinPatch` object.
+If you want to use a bundle, in the `dist` directory, there's both a bundled `roguelike-pumpkin-patch.js`, and a minified `roguelike-pumpkin-patch.min.js`; link to whichever version you prefer in the head of your page. You can then access the entire library via the bundled `RPP` object.
 
 If you're using a build system like Webpack, you can import whatever components you need directly, i.e.
 
