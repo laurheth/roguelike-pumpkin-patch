@@ -32,7 +32,7 @@ export interface TileSize {
 export interface TileOptions {
     content?: string|HTMLElement;
     background?: string;
-    foreground?: string;
+    color?: string;
     className?:string;
     classList?:Array<string>;
 }

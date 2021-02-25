@@ -10,7 +10,7 @@ export default class Tile {
     /** Background colour. */
     private _background: string;
     /** Foreground colour */
-    private _foreground: string;
+    private _color: string;
 
     /** Position */
     private _position: Position;
@@ -34,9 +34,9 @@ export default class Tile {
         this.element.classList.add(baseClassName);
         
         // Set tile content and colour scheme
-        const { content='', foreground='', background='', className='', classList = [], ...rest } = tileOptions;
+        const { content='', color='', background='', className='', classList = [], ...rest } = tileOptions;
         this.content = content;
-        this.foreground = foreground;
+        this.color = color;
         this.background = background;
         if (classList.length > 0) {
             this.classList = classList;
@@ -90,15 +90,15 @@ export default class Tile {
         }
     }
 
-    /** Get or set the foreground colour */
-    get foreground(): string {
-        return this._foreground;
+    /** Get or set the color colour */
+    get color(): string {
+        return this._color;
     }
 
-    set foreground(newForeground: string) {
-        if (newForeground !== this._foreground) {
-            this._foreground = newForeground;
-            this.element.style.color = newForeground;
+    set color(newcolor: string) {
+        if (newcolor !== this._color) {
+            this._color = newcolor;
+            this.element.style.color = newcolor;
         }
     }
 
@@ -173,11 +173,11 @@ export default class Tile {
 
     /** Set options for the tile */
     setOptions(newOptions: TileOptions) {
-        const {content="", background="", foreground="", className="", classList} = newOptions;
+        const {content="", background="", color="", className="", classList} = newOptions;
         
         this.content = content;
         this.background = background;
-        this.foreground = foreground;
+        this.color = color;
         if (classList) {
             this.classList = classList;
         } else {
@@ -190,15 +190,15 @@ export default class Tile {
      * Update options for the tile
      */
     updateOptions(newOptions: TileOptions) {
-        const {content, background, foreground, className, classList} = newOptions;
+        const {content, background, color, className, classList} = newOptions;
         if (typeof content !== "undefined") {
             this.content = content;
         }
         if (typeof background !== "undefined") {
             this.background = background;
         }
-        if (typeof foreground !== "undefined") {
-            this.foreground = foreground;
+        if (typeof color !== "undefined") {
+            this.color = color;
         }
         if (classList && classList.length>0) {
             this.classList = classList;

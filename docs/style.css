@@ -36,3 +36,9 @@ html {
     color: white;
     font-family: sans-serif;
 }
+
+.pumpkin-container.colorDisplay {
+    background: linear-gradient(#FF00FF, #FFFF00);
+    color: darkslateblue;
+    font-weight: bold;
+}

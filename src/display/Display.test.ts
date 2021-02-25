@@ -88,31 +88,31 @@ describe("Test the display.",()=>{
         const display = new Display({target:target, width:10, height:10});
         const tile = display.getTile(0,0);
         const tileElement = tile.element;
-        display.setTile(0,0,{content:'@',foreground:'red',background:'gray',className:'test'});
+        display.setTile(0,0,{content:'@',color:'red',background:'gray',className:'test'});
 
         expect(tile.content).toBe('@');
-        expect(tile.foreground).toBe('red');
+        expect(tile.color).toBe('red');
         expect(tile.background).toBe('gray');
         expect(tileElement.classList.length).toBe(2);
         expect(tileElement.className.includes('pumpkin-tile'));
 
         display.updateTile(0,0,'#');
         expect(tile.content).toBe('#');
-        expect(tile.foreground).toBe('red');
+        expect(tile.color).toBe('red');
         expect(tile.background).toBe('gray');
         expect(tileElement.classList.length).toBe(2);
         expect(tileElement.className.includes('pumpkin-tile'));
 
         display.setTile(0,0,'$');
         expect(tile.content).toBe('$');
-        expect(tile.foreground).not.toBe('red');
+        expect(tile.color).not.toBe('red');
         expect(tile.background).not.toBe('gray');
         expect(tileElement.classList.length).toBe(1);
         expect(tileElement.className.includes('pumpkin-tile'));
 
         display.setTile(0,0,{background:'red'});
         expect(tile.content).toBe('');
-        expect(tile.foreground).toBe('');
+        expect(tile.color).toBe('');
         expect(tile.background).toBe('red');
         expect(tileElement.classList.length).toBe(1);
         expect(tileElement.className.includes('pumpkin-tile'));

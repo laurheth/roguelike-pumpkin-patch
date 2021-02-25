@@ -22,7 +22,11 @@ export default class Display {
         const {target, width=1, height=1, tileWidth, tileHeight, ...rest} = parameters;
         // Set the target
         this.target = target;
-        this.target.className = "pumpkin-container";
+        if (this.target.className) {
+            this.target.classList.add("pumpkin-container");
+        } else {
+            this.target.className = "pumpkin-container";
+        }
 
         // Create the element for the display
         this.element = document.createElement('div');

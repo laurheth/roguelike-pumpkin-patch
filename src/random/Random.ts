@@ -11,9 +11,9 @@ export class Random {
     constructor(seed?: number, base?:number) {
         if (!seed) {
             // Get seed from milliseconds since Jan 1st, 1970
-            seed = Math.floor(Date.now());
+            seed = Date.now();
         }
-        this.seed = seed;
+        this.seed = Math.floor(seed);
         this.weyl = 0;
         this.x = 0;
         this.base = (base) ? base : 100000;

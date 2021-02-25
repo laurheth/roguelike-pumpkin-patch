@@ -137,7 +137,7 @@ for (let i=5; i < 10; i++) {
                 <div id="displayExample"></div>
 
                 <p>
-                    Other methods you might enjoy are:
+                    There are some other methods you might enjoy. If you want to center the display on a particular location (i.e. the player's position, or a security camera, or a cutscene, etc), you can use centerDisplay:
                 </p>
                 <pre>
                     <code>
@@ -145,7 +145,7 @@ display.centerDisplay(x,y);
                     </code>
                 </pre>
                 <p>
-                    For when you want to center the display on a particular location (for instance, the player's position), or:
+                    If you want to automatically determine how many tiles you need to fill the available space, given whatever size they currently are, you can use calculateDimensions:
                 </p>
                 </p>
                 <pre>
@@ -154,24 +154,71 @@ display.dimensions = display.calculateDimensions();
                     </code>
                 </pre>
                 <p>
-                    If you want to automatically determine how many tiles you need to fill the available space, given whatever size they currently are. You can also use:
+                    If you want to do something more in depth with a particular tile, you can use getTile to access it:
                 </p>
                 <pre>
                     <code>
-display.getTile(x,y);
+const tile = display.getTile(x,y);
                     </code>
                 </pre>
                 <p>
-                    If you you want to do something with a particular tile.
+                    Lastly, while the default style for the display is a black background with white foreground, this is handled by CSS inserted into the pages head; you can just override it, and set any other styles you'd like, with your own stylesheet by accessing pumpkin-container. The only detail that is handled inline is the font size, which is tied to tile size, and even that can be changed by using the tileSize property (see earlier!)
                 </p>
+                <pre>
+                    <code>
+.pumpkin-container.colorDisplay {
+    background: linear-gradient(#FF00FF, #FFFF00);
+    color: darkslateblue;
+    font-weight: bold;
+}
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+// Select the element we want to be the target.
+const colorTarget = document.querySelector(".colorDisplay");
+
+// Initialize the colorful display
+const colorDisplay = new Display({target:colorTarget, width: 10, height: 10});
+
+// Draw some stuff
+for(let i=0;i<10;i++) {
+    for(let j=0;j<10;j++) {
+        if (i===0 || j===0 || i===9 || j===9) {
+            // Did you know you can use a shorthand here? Now you do!
+            colorDisplay.setTile(i,j,'#');
+        } else if (i===3 && j===3) {
+            colorDisplay.setTile(i,j,'@');
+        } else if (i===4 && j===5) {
+            colorDisplay.setTile(i,j,{
+                content: 'g',
+                // You can use inline colors and backgrounds if
+                // you REALLY want to, but I discourage it.
+                color: 'green',
+                background: 'rgba(128,0,0,0.2)',
+            });
+        } else {
+            colorDisplay.setTile(i,j,'.');
+        }
+    }
+}
+
+// Make the display fit the container
+colorDisplay.tileSize = colorDisplay.calculateTileSize();
+
+// Center it on the player
+colorDisplay.centerDisplay(3,3);
+                    </code>
+                </pre>
+                <div id="colorfulDisplay" class="colorDisplay"></div>
             </section>
             <section class="random" id="random">
                 <h2>Random Numbers, and related utilities</h2>
                 <p>Generating random numbers is fun for the whole family. Here's how you do it.</p>
                 <pre>
                     <code>
-// You can define a seed if you would like; if not, the current time is used.
-const optionalSeed = 546456732;
+// You can define a seed if you would like! If not, the generator figures out its own.
+const optionalSeed = Date.now();
 
 // Start the random number generator
 const random = new Random(optionalSeed);
@@ -217,15 +264,70 @@ const randomWeightedElement = random.getWeightedElement(weightedArray);
                 </p>
                 <ul id="randomResults">
                 </ul>
+                <button id="randomButton">Get me more random stuff!</button>
             </section>
             <section class="fov" id="fov">
                 <h2>Field of View</h2>
                 <p>It's nice to see things. Roguelike Pumpkin Patch lets you do it.</p>
                 <pre>
                     <code>
-// 
+// Here's a cool map to live in
+const map = [
+    "####################",
+    "#..................#",
+    "#..#.....#....#....#",
+    "#..#.....###...##..#",
+    "#..#.....#.........#",
+    "#.............#....#",
+    "#........#.........#",
+    "####...###....#....#",
+    "#........#.........#",
+    "####################",
+];
+const width = map[0].length;
+const height = map.length;
+
+// And lets start up a display to use
+const fovDisplayParams = {
+    target: document.getElementById("fovMap"),
+    width: width,
+    height: height,
+};
+const fovDisplay = new Display(fovDisplayParams);
+
+// FOV takes a callback function that decides whether or not you can see something.
+// It takes one parameter, which is a two element position array pos = [x,y]
+// and returns true or false.
+const canSee = (position) => {
+    const x = position[0];
+    const y = position[1];
+    const tile = map[y][x];
+
+    // First, regardless of success or not, see this tile
+    fovDisplay.setTile(x,y,tile);
+
+    // Next, use whatever criteria we want to decide if it is seethrough or not.
+    // In this case, if it's not a wall (or # character), we can see through it.
+    return tile !== '#';
+}
+
+// It has an optional second parameter for distance. The default is 8.
+const optionalRange = 6;
+
+// Initialize the FOV object!
+const fov = new FOV(canSee, optionalRange);
+
+// Choose a position for the player to be
+const playerPos = [5,5];
+
+// Now, LOOK!
+fov.look(playerPos);
+
+// Draw on the player; this could've been right in the map, too.
+fovDisplay.setTile(playerPos[0], playerPos[1], '@');                        
                     </code>
                 </pre>
+                <div id="fovMap"></div>
             </section>
         </div>
     </main>
