@@ -6,7 +6,7 @@ import css from './DisplayStyle.js';
 export default class Display {
     private _width: number;
     private _height: number;
-    private target: HTMLDivElement;
+    private target: HTMLElement;
     readonly element: HTMLDivElement;
     private tiles: Array<Tile>;
     private centerPosition: Position;
@@ -214,19 +214,22 @@ export default class Display {
 
     /** Add the default styles to the head of the page. */
     applyDefaultStyles() {
+        const stylesId = "pumpkin-default-styles";
+        // Check to make sure the styles aren't already present
+        if (!document.getElementById(stylesId)) {
+            // Create the style element
+            const styles = document.createElement("style");
+            styles.id = stylesId;
+            styles.type = "text/css";
+            styles.appendChild(document.createTextNode(css));
 
-        // Create the style element
-        const styles = document.createElement("style");
-        styles.type = "text/css";
-        styles.appendChild(document.createTextNode(css));
+            // Get the head of the page
+            const head = document.head;
 
-        // Get the head of the page
-        const head = document.head;
-
-        // Find the first style or link element, and insert in front of it
-        const firstStyle = document.querySelector("style, link");
-
-        head.insertBefore(styles, firstStyle);
+            // Find the first style or link element, and insert in front of it
+            const firstStyle = document.querySelector("style, link");
+            head.insertBefore(styles, firstStyle);
+        }
     }
 };
 

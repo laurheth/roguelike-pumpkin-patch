@@ -3224,6 +3224,7 @@ exports[`Test the display. Rainbow display test. 1`] = `
 exports[`Test the display. Small, simple display. 1`] = `
 <head>
   <style
+    id="pumpkin-default-styles"
     type="text/css"
   >
     

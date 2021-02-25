@@ -36,6 +36,10 @@ describe("Test the display.",()=>{
 
         display.centerDisplay(1,1);
 
+        // Does a bonus display mess with things? Not going to attach to the page, but, it might try to add to the head automatically. Make sure it doesn't.
+        const bonusTarget = document.createElement('div');
+        const bonusDisplay = new Display({target:bonusTarget});
+
         expect(document.head).toMatchSnapshot();
         expect(document.body).toMatchSnapshot();
     });

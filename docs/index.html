@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roguelike Pumpkin Patch Documentation</title>
     <link rel="stylesheet" href="./style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/railscasts.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
     <header>
@@ -25,6 +29,107 @@
         <div class="wrapper">
             <section class="display" id="display">
                 <h2>The Display</h2>
+
+                <p>The display is where most of the magic happens. Contains a multitude of tiles, and is based on HTML and CSS. Suppose you have the following as your CSS:</p>
+
+                <pre>
+                    <code>
+/* You can style the tiles with pumpkin-tile! You can also target pumpkin-display and pumpkin-container */
+.pumpkin-tile {
+    font-family: monospace;
+}
+
+/* The display will fit the container you put it in; make sure it has a size! */
+.pumpkin-container {
+    height: 400px;
+    border: 2px solid gray;
+}
+
+/* Just some styles that you think look cool */
+.brickWall {
+    background: darkred;
+    color: gray;
+}
+
+.player {
+    color: white;
+}
+
+.coolFloor {
+    color: green;
+}
+
+.superAwesome {
+    background: purple;
+    color: white;
+    font-family: sans-serif;
+}
+
+                    </code>
+                </pre>
+
+                <p>Usage of the display might look like:</p>
+                <pre>
+                    <code>
+// First, select the target element you want the display to be within
+const target = document.getElementById("displayExample");
+
+// Paramaters object
+const params = {
+    // Required! The display must go somewhere
+    target: target,
+    // Width of the display in tiles
+    width: 40,
+    // Height of the display in tiles
+    height: 30,
+};
+
+// Start the display!
+const display = new Display(params);
+
+// Set the tile size so that it fits its container
+display.tileSize = display.calculateTileSize();
+
+// Lets draw some stuff
+for (let x=0; x < params.width; x++) {
+    for (let y=0; y < params.height; y++) {
+        // Draw some walls
+        if (x===0 || y===0 || x===params.width-1 || y===params.height-1) {
+            display.setTile(x,y,{
+                // Content can be a string, or ANY html element! (including images!)
+                content: '#',
+                className: "brickWall"
+            });
+
+        // Add our player!
+        } else if (x===3 && y===5) {
+            display.setTile(x,y,{
+                content: '@',
+                // You can use as many classes as you would like!
+                classList: ["player"]
+            });
+        // Some floor everywhere else
+        } else {
+            display.setTile(x,y,{
+                content: '.',
+                className: "coolFloor"
+            });
+        }
+    }
+}
+
+// Hmm actually I want to change some of the tiles a bit. updateTile changes the
+// parameters that you specify; setTile replaces everything.
+
+for (let i=5; i < 10; i++) {
+    display.updateTile(i,i,{className:"superAwesome"});
+}
+
+                    </code>
+                </pre>
+
+                <p>The results will be:</p>
+                <div id="displayExample"></div>
             </section>
         </div>
     </main>

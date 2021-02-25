@@ -1,0 +1,38 @@
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+/* You can style the tiles with pumpkin-tile! You can also target pumpkin-display and pumpkin-container */
+.pumpkin-tile {
+    font-family: monospace;
+}
+
+/* The display will fit the container you put it in; make sure it has a size! */
+.pumpkin-container {
+    height: 400px;
+    border: 2px solid gray;
+}
+
+/* Just some styles that you think look cool */
+.brickWall {
+    background: darkred;
+    color: gray;
+}
+
+.player {
+    color: white;
+}
+
+.coolFloor {
+    color: green;
+}
+
+.superAwesome {
+    background: purple;
+    color: white;
+    font-family: sans-serif;
+}

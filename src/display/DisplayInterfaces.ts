@@ -1,7 +1,7 @@
 /** Display parameters */
 export interface DisplayParams {
     /** Target div to use as the display. */
-    target: HTMLDivElement;
+    target: HTMLElement;
     /** Width in tiles of the display. */
     width?: number;
     /** Height in tiles of the display. */
