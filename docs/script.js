@@ -1,1 +1,111 @@
-(()=>{"use strict";var t=function(){return(t=Object.assign||function(t){for(var e,i=1,n=arguments.length;i<n;i++)for(var o in e=arguments[i])Object.prototype.hasOwnProperty.call(e,o)&&(t[o]=e[o]);return t}).apply(this,arguments)},e="pumpkin-tile";const i=function(){function i(t,i,n){this.element=document.createElement("div"),this.element.classList.add(e);var o=t.content,s=void 0===o?"":o,r=t.foreground,a=void 0===r?"":r,h=t.background,l=void 0===h?"":h,c=t.className,u=void 0===c?"":c,p=t.classList,f=void 0===p?[]:p;!function(t,e){var i={};for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&e.indexOf(n)<0&&(i[n]=t[n]);if(null!=t&&"function"==typeof Object.getOwnPropertySymbols){var o=0;for(n=Object.getOwnPropertySymbols(t);o<n.length;o++)e.indexOf(n[o])<0&&Object.prototype.propertyIsEnumerable.call(t,n[o])&&(i[n[o]]=t[n[o]])}}(t,["content","foreground","background","className","classList"]),this.content=s,this.foreground=a,this.background=l,f.length>0?this.classList=f:this.className=u,this.tileWidth=(null==n?void 0:n.tileWidth)?n.tileWidth:16,this.tileHeight=(null==n?void 0:n.tileHeight)?n.tileHeight:this.tileWidth,this.position=i}return Object.defineProperty(i.prototype,"content",{get:function(){return this._content},set:function(t){if(this.confirmContentElement(),this._content!==t){if("string"==typeof t)this.contentElement.innerHTML=t;else{for(;this.contentElement.lastElementChild;)this.contentElement.removeChild(this.contentElement.lastElementChild);this.contentElement.appendChild(t)}this._content=t}},enumerable:!1,configurable:!0}),Object.defineProperty(i.prototype,"background",{get:function(){return this._background},set:function(t){t!==this._background&&(this._background=t,this.element.style.backgroundColor=t)},enumerable:!1,configurable:!0}),Object.defineProperty(i.prototype,"foreground",{get:function(){return this._foreground},set:function(t){t!==this._foreground&&(this._foreground=t,this.element.style.color=t)},enumerable:!1,configurable:!0}),Object.defineProperty(i.prototype,"position",{get:function(){return this._position},set:function(e){this._position=t({},e),this.element.style.left=e.x*this.tileWidth+"px",this.element.style.top=e.y*this.tileHeight+"px"},enumerable:!1,configurable:!0}),Object.defineProperty(i.prototype,"tileWidth",{get:function(){return this._tileWidth},set:function(t){this._tileWidth=t,this.element.style.width=t+"px"},enumerable:!1,configurable:!0}),Object.defineProperty(i.prototype,"tileHeight",{get:function(){return this._tileHeight},set:function(t){this._tileHeight=t,this.element.style.height=t+"px"},enumerable:!1,configurable:!0}),Object.defineProperty(i.prototype,"className",{get:function(){return this.classList.join(" ")},set:function(t){this.classList=t?t.split(" "):[]},enumerable:!1,configurable:!0}),Object.defineProperty(i.prototype,"classList",{get:function(){return function(){for(var t=0,e=0,i=arguments.length;e<i;e++)t+=arguments[e].length;var n=Array(t),o=0;for(e=0;e<i;e++)for(var s=arguments[e],r=0,a=s.length;r<a;r++,o++)n[o]=s[r];return n}([e],this._classList)},set:function(t){var i,n,o=this;this._classList||(this._classList=[]),t.length===this._classList.length&&t.every((function(t){return o._classList.includes(t)}))&&this._classList.every((function(e){return t.includes(e)}))||(this._classList.length>0&&(i=this.element.classList).remove.apply(i,this._classList),this._classList=t.filter((function(t){return t.trim()&&t!==e})),t.length>0&&(n=this.element.classList).add.apply(n,this.classList))},enumerable:!1,configurable:!0}),i.prototype.setOptions=function(t){var e=t.content,i=void 0===e?"":e,n=t.background,o=void 0===n?"":n,s=t.foreground,r=void 0===s?"":s,a=t.className,h=void 0===a?"":a,l=t.classList;this.content=i,this.background=o,this.foreground=r,l?this.classList=l:this.className=h},i.prototype.updateOptions=function(t){var e=t.content,i=t.background,n=t.foreground,o=t.className,s=t.classList;void 0!==e&&(this.content=e),void 0!==i&&(this.background=i),void 0!==n&&(this.foreground=n),s&&s.length>0?this.classList=s:void 0!==o&&(this.className=o)},i.prototype.confirmContentElement=function(){this.contentElement||(this.contentElement=document.createElement("div"),this.element.appendChild(this.contentElement))},i}();const n=function(){function t(t){var e=t.target,i=t.width,n=void 0===i?1:i,o=t.height,s=void 0===o?1:o,r=t.tileWidth,a=t.tileHeight;!function(t,e){var i={};for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&e.indexOf(n)<0&&(i[n]=t[n]);if(null!=t&&"function"==typeof Object.getOwnPropertySymbols){var o=0;for(n=Object.getOwnPropertySymbols(t);o<n.length;o++)e.indexOf(n[o])<0&&Object.prototype.propertyIsEnumerable.call(t,n[o])&&(i[n[o]]=t[n[o]])}}(t,["target","width","height","tileWidth","tileHeight"]),this.target=e,this.target.className="pumpkin-container",this.element=document.createElement("div"),this.element.className="pumpkin-display",this.element.setAttribute("aria-hidden","true"),this.dimensions={width:n,height:s},this.tileSize={tileWidth:r||16,tileHeight:a||r||16},this.applyDefaultStyles(),this.target.appendChild(this.element)}return Object.defineProperty(t.prototype,"tileSize",{get:function(){return this._tileSize},set:function(t){var e;this._tileSize=t,this.element.style.fontSize=t.tileHeight+"px",null===(e=this.tiles)||void 0===e||e.forEach((function(e){e.tileWidth=t.tileWidth,e.tileHeight=t.tileHeight,e.position=e.position})),this.resetSize()},enumerable:!1,configurable:!0}),Object.defineProperty(t.prototype,"dimensions",{get:function(){return{width:this._width,height:this._height}},set:function(t){t.width!==this._width&&t.height!==this._height&&(this._width=t.width,this._height=t.height,this.allocateDisplay(),this.resetSize(),this.moveToCenter())},enumerable:!1,configurable:!0}),t.prototype.resetSize=function(){this._width&&this._height&&this.tileSize&&(this.element.style.width=this._width*this.tileSize.tileWidth+"px",this.element.style.height=this._height*this.tileSize.tileHeight+"px")},t.prototype.centerDisplay=function(t,e){this.centerPosition=void 0===t||void 0===e?void 0:{x:t,y:e},this.moveToCenter()},t.prototype.moveToCenter=function(){if(this.centerPosition){var t=(this.centerPosition.x+.5)/this.dimensions.width,e=(this.centerPosition.y+.5)/this.dimensions.height;this.element.style.transform="translate("+100*-t+"%,"+100*-e+"%)"}else this.element.style.transform=""},t.prototype.allocateDisplay=function(){var t=this;this.tiles&&this.tiles.forEach((function(e){t.element.removeChild(e.element)})),this.tiles=[];for(var e=0;e<this._height;e++)for(var n=0;n<this._width;n++){var o=new i({content:""},{x:n,y:e},this.tileSize);this.tiles.push(o),this.element.appendChild(o.element)}},t.prototype.getTile=function(t,e){if(t>=0&&t<this._width&&e>=0&&e<this._height){var i=t+e*this._width;return this.tiles[i]}},t.prototype.formatTileOptions=function(t){return"string"==typeof t||t instanceof HTMLElement?{content:t}:t},t.prototype.setTile=function(t,e,i){var n=this.getTile(t,e);n&&n.setOptions(this.formatTileOptions(i))},t.prototype.updateTile=function(t,e,i){var n=this.getTile(t,e);n&&n.updateOptions(this.formatTileOptions(i))},t.prototype.calculateDimensions=function(t){void 0===t&&(t=this.target.getBoundingClientRect());var e=Math.abs(t.right-t.left),i=Math.abs(t.bottom-t.top);return{width:Math.floor(e/this.tileSize.tileWidth),height:Math.floor(i/this.tileSize.tileHeight)}},t.prototype.calculateTileSize=function(t){void 0===t&&(t=this.target.getBoundingClientRect());var e=Math.abs(t.right-t.left),i=Math.abs(t.bottom-t.top),n={tileWidth:e/this.dimensions.width,tileHeight:i/this.dimensions.height},o=Math.min(n.tileWidth,n.tileHeight);return{tileWidth:o,tileHeight:o}},t.prototype.applyDefaultStyles=function(){var t=document.createElement("style");t.type="text/css",t.appendChild(document.createTextNode("\n.pumpkin-container {\n    position: relative;\n    overflow: hidden;\n    background-color: #000000;\n    color: #ffffff;\n}\n\n.pumpkin-display {\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%, -50%);\n}\n\n.pumpkin-tile {\n    position: absolute;\n}\n\n.pumpkin-tile > * {\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    z-index: 10;\n}\n"));var e=document.head,i=document.querySelector("style, link");e.insertBefore(t,i)},t}();!function(){function t(t){t||(t={});var e=t.type,i=void 0===e?"simple":e;this.type=i,this.queue=[],this.time=0}t.prototype.add=function(t){var e={};if(t instanceof Function?e.callback=t:"act"in t?e.actor=t:Object.assign(e,t),void 0===e.repeats&&e.actor&&(e.repeats=!0),"complex"===this.type){e.delay||(e.delay=1);var i=e.delay+this.time;if(0===this.queue.length||this.queue[this.queue.length-1].time<=i)this.queue.push({event:e,time:i});else for(var n=0;n<this.queue.length;n++)if(i<this.queue[n].time){this.queue.splice(n,0,{event:e,time:i});break}}else this.queue.push({event:e,time:0})},t.prototype.advance=function(){return t=this,e=void 0,n=function(){var t;return function(t,e){var i,n,o,s,r={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return s={next:a(0),throw:a(1),return:a(2)},"function"==typeof Symbol&&(s[Symbol.iterator]=function(){return this}),s;function a(s){return function(a){return function(s){if(i)throw new TypeError("Generator is already executing.");for(;r;)try{if(i=1,n&&(o=2&s[0]?n.return:s[0]?n.throw||((o=n.return)&&o.call(n),0):n.next)&&!(o=o.call(n,s[1])).done)return o;switch(n=0,o&&(s=[2&s[0],o.value]),s[0]){case 0:case 1:o=s;break;case 4:return r.label++,{value:s[1],done:!1};case 5:r.label++,n=s[1],s=[0];continue;case 7:s=r.ops.pop(),r.trys.pop();continue;default:if(!((o=(o=r.trys).length>0&&o[o.length-1])||6!==s[0]&&2!==s[0])){r=0;continue}if(3===s[0]&&(!o||s[1]>o[0]&&s[1]<o[3])){r.label=s[1];break}if(6===s[0]&&r.label<o[1]){r.label=o[1],o=s;break}if(o&&r.label<o[2]){r.label=o[2],r.ops.push(s);break}o[2]&&r.ops.pop(),r.trys.pop();continue}s=e.call(t,r)}catch(t){s=[6,t],n=0}finally{i=o=0}if(5&s[0])throw s[1];return{value:s[0]?s[1]:void 0,done:!0}}([s,a])}}}(this,(function(e){switch(e.label){case 0:if(0===this.queue.length)throw new Error("Event queue is empty.");return t=this.queue.shift(),this.time=t.time,"number"==typeof t.event.repeats&&t.event.repeats--,t.event.repeats&&this.add(t.event),t.event.callback?[4,t.event.callback()]:[3,2];case 1:e.sent(),e.label=2;case 2:return t.event.actor?[4,t.event.actor.act()]:[3,4];case 3:e.sent(),e.label=4;case 4:return[2]}}))},new((i=void 0)||(i=Promise))((function(o,s){function r(t){try{h(n.next(t))}catch(t){s(t)}}function a(t){try{h(n.throw(t))}catch(t){s(t)}}function h(t){var e;t.done?o(t.value):(e=t.value,e instanceof i?e:new i((function(t){t(e)}))).then(r,a)}h((n=n.apply(t,e||[])).next())}));var t,e,i,n},t.prototype.remove=function(t){var e=this,i=[];this.queue.forEach((function(e,n){e.event.actor===t&&i.push(n)})),i.reverse(),i.forEach((function(t){e.queue.splice(t,1)}))},Object.defineProperty(t.prototype,"length",{get:function(){return this.queue.length},enumerable:!1,configurable:!0})}(),function(){function t(t,e){t||(t=Math.floor(Date.now())),this.seed=t,this.weyl=0,this.x=0,this.base=e||1e5;for(var i=0;i<10;i++)this.getRandom()}t.prototype.getRandom=function(){return this.x*=this.x,this.x+=this.weyl+=this.seed,this.x=(this.x>>>32|this.x<<32)>>>0,this.x%this.base/this.base},t.prototype.getNumber=function(t,e,i){return void 0===i&&Number.isInteger(t)&&Number.isInteger(e)&&(i=!0),i?Math.floor(this.getRandom()*(e+1-t))+Math.ceil(t):this.getRandom()*(e-t)+t},t.prototype.getRandomElement=function(t){return t[this.getNumber(0,t.length-1,!0)]},t.prototype.getWeightedElement=function(t){var e=0,i=!0;t.forEach((function(t){e+=t.weight,i=i&&Number.isInteger(t.weight)}));for(var n=this.getNumber(i?1:0,e,i),o=0;o<t.length;o++)if((n-=t[o].weight)<=0)return t[o].option;throw new Error("No match found.")}}();var o=function(){for(var t=0,e=0,i=arguments.length;e<i;e++)t+=arguments[e].length;var n=Array(t),o=0;for(e=0;e<i;e++)for(var s=arguments[e],r=0,a=s.length;r<a;r++,o++)n[o]=s[r];return n};!function(){function t(t){var e=t.canPass,i=t.metric,n=t.maxIterations,o=t.weight;!function(t,e){var i={};for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&e.indexOf(n)<0&&(i[n]=t[n]);if(null!=t&&"function"==typeof Object.getOwnPropertySymbols){var o=0;for(n=Object.getOwnPropertySymbols(t);o<n.length;o++)e.indexOf(n[o])<0&&Object.prototype.propertyIsEnumerable.call(t,n[o])&&(i[n[o]]=t[n[o]])}}(t,["canPass","metric","maxIterations","weight"]),this.canPass=e,i||(i=function(t,e){return Math.abs(e[1]-t[1])+Math.abs(e[0]-t[0])}),o||(o=function(t){return 1}),this.maxIterations=n,this.metric=i,this.weight=o}t.prototype.findPath=function(t,e,i){var n=this;void 0===i&&(i=!1);for(var s=[],r=this.maxIterations?this.maxIterations:40*this.metric(t,e),a=0,h=[{position:o(t),steps:0,distanceFromGoal:this.metric(t,e),previousLocation:null}],l=[],c=[0,1,1.2];a<r&&!this.contains(h,e);)a++,h.forEach((function(t){for(var o=-1;o<2;o++)for(var s=-1;s<2;s++)if(!i||0===o||0===s){var r=[t.position[0]+o,t.position[1]+s],a=c[Math.abs(o)+Math.abs(s)]*n.weight(r);if(n.canPass(r)){var u=n.getLocation(h,r),p=n.getLocation(l,r);u||p?(u&&u.steps>t.steps+a&&(u.steps=t.steps+a,u.previousLocation=t),p&&p.steps>t.steps+a&&(p.steps=t.steps+a,p.previousLocation=t)):l.push({position:r,steps:t.steps+a,distanceFromGoal:n.metric(r,e),previousLocation:t})}}})),l.sort((function(t,e){return e.steps+e.distanceFromGoal-(t.steps+t.distanceFromGoal)})),h.push(l.pop());var u=this.getLocation(h,e);if(this.contains(h,e))for(a=0;(u.position[0]!==t[0]||u.position[1]!==t[1])&&a<r;)a++,s.push(u.position),u=u.previousLocation;return s.reverse()},t.prototype.isEqual=function(t,e){return t.position[0]===e.position[0]&&t.position[1]===e.position[1]},t.prototype.contains=function(t,e){var i=this;return Array.isArray(e)?t.some((function(t){return t.position[0]===e[0]&&t.position[1]===e[1]})):t.some((function(t){return i.isEqual(t,e)}))},t.prototype.getLocation=function(t,e){for(var i=0,n=t;i<n.length;i++){var o=n[i];if(o.position[0]===e[0]&&o.position[1]===e[1])return o}}}(),function(){function t(t,e){this.canSee=t,this.range=e||8}t.prototype.look=function(t,e){var i=e||this.range;this.canSee(t);for(var n=[],o=[],s=1;s<=i;s++){for(var r=-s;r<=s;r++)for(var a=-s;a<=s;a++)if(Math.abs(r)===s||Math.abs(a)===s){var h=[t[0]+r,t[1]+a];if(!(this.distance(t,h)>i)){var l=this.angleTo(t,h),c=this.angularSize(t,h)/2;this.isInShadows(l,n)&&this.isInShadows(l+c,n)&&this.isInShadows(l-c,n)||this.canSee(h)||o.push({startAngle:l-c,endAngle:l+c})}}for(;o.length>0;)n.push(o.pop())}},t.prototype.angleTo=function(t,e){var i=e[1]-t[1],n=e[0]-t[0];return 180*Math.atan2(i,n)/Math.PI},t.prototype.angularSize=function(t,e){var i=this.distance(t,e);return 360*Math.atan(1/i)/Math.PI},t.prototype.distance=function(t,e){return Math.sqrt(Math.pow(e[1]-t[1],2)+Math.pow(e[0]-t[0],2))},t.prototype.isInShadows=function(t,e){for(var i=t<0?t+360:t-360,n=0,o=e;n<o.length;n++){var s=o[n];if(t<=s.endAngle&&t>=s.startAngle||i<=s.endAngle&&i>=s.startAngle)return!0}return!1}}();const s={target:document.getElementById("displayExample"),width:40,height:30},r=new n(s);r.tileSize=r.calculateTileSize();for(let t=0;t<s.width;t++)for(let e=0;e<s.height;e++)0===t||0===e||t===s.width-1||e===s.height-1?r.setTile(t,e,{content:"#",className:"brickWall"}):3===t&&5===e?r.setTile(t,e,{content:"@",classList:["player"]}):r.setTile(t,e,{content:".",className:"coolFloor"});for(let t=5;t<10;t++)r.updateTile(t,t,{className:"superAwesome"})})();
+import { Display, EventManager, Random, PathFinder, FOV } from '../lib/index';
+
+// First, select the target element you want the display to be within
+const target = document.getElementById("displayExample");
+
+// Paramaters object
+const params = {
+    // Required! The display must go somewhere
+    target: target,
+    // Width of the display in tiles
+    width: 40,
+    // Height of the display in tiles
+    height: 30,
+};
+
+// Start the display!
+const display = new Display(params);
+
+// Set the tile size so that it fits its container
+display.tileSize = display.calculateTileSize();
+
+// Lets draw some stuff
+for (let x=0; x < params.width; x++) {
+    for (let y=0; y < params.height; y++) {
+        // Draw some walls
+        if (x===0 || y===0 || x===params.width-1 || y===params.height-1) {
+            display.setTile(x,y,{
+                // Content can be a string, or ANY html element! (including images!)
+                content: '#',
+                className: "brickWall"
+            });
+
+        // Add our player!
+        } else if (x===3 && y===5) {
+            display.setTile(x,y,{
+                content: '@',
+                // You can use as many classes as you would like!
+                classList: ["player"]
+            });
+        // Some floor everywhere else
+        } else {
+            display.setTile(x,y,{
+                content: '.',
+                className: "coolFloor"
+            });
+        }
+    }
+}
+
+// Hmm actually I want to change some of the tiles a bit. updateTile changes the
+// parameters that you specify; setTile replaces everything.
+
+for (let i=5; i < 10; i++) {
+    display.updateTile(i,i,{className:"superAwesome"});
+}
+
+// You can define a seed if you would like; if not, the current time is used.
+const optionalSeed = 546456732;
+
+// Start the random number generator
+const random = new Random(optionalSeed);
+
+// If you want a random number from 0 <= x < 1:
+const x = random.getRandom();
+
+// If you would like a random number in the range of lower <= y <= upper you can use getNumber.
+const lower = 0;
+const upper = 10;
+const y = random.getNumber(lower,upper);
+
+// If the given bounds are integers, it will generate integers.
+// If not, it will generate decimals.
+// If you want to specify explicitly, use the integer boolean parameter.
+const noThanksNotInteger = random.getNumber(lower,upper,false);
+
+// If you want a random element from an array, use getRandomElement.
+const coolArray = [1, 2, 3, 4, 5, 6, 7];
+const randomElement = random.getRandomElement(coolArray);
+
+// If you want to provide weights for each value, you can use getWeightedElement.
+const weightedArray = [
+    {
+        weight: 10,
+        option: "Cute dog"
+    },
+    {
+        weight: 15,
+        option: "Awesome cat"
+    },
+    {
+        weight: 1,
+        option: "Rare Franklin"
+    }
+];
+
+const randomWeightedElement = random.getWeightedElement(weightedArray);
+
+const resultsList = document.getElementById("randomResults");
+
+const attachResult = function (name, result) {
+    const li = document.createElement("li");
+    const text = `${name} : ${result}`;
+    li.appendChild(document.createTextNode(text));
+    resultsList.appendChild(li);
+}
+
+attachResult("x", x.toString());
+attachResult("y", y.toString());
+attachResult("noThanksNotInteger", noThanksNotInteger.toString());
+attachResult("randomElement", randomElement.toString());
+attachResult("randomWeightedElement", randomWeightedElement.toString());

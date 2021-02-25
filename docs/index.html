@@ -5,9 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roguelike Pumpkin Patch Documentation</title>
-    <link rel="stylesheet" href="./style.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/railscasts.min.css">
+    <link rel="stylesheet" href="./style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 </head>
@@ -30,7 +29,9 @@
             <section class="display" id="display">
                 <h2>The Display</h2>
 
-                <p>The display is where most of the magic happens. Contains a multitude of tiles, and is based on HTML and CSS. Suppose you have the following as your CSS:</p>
+                <p>
+                    The display is where most of the magic happens. Contains a multitude of tiles, and is based on HTML and CSS. Suppose you have the following as your CSS:
+                </p>
 
                 <pre>
                     <code>
@@ -68,7 +69,9 @@
                     </code>
                 </pre>
 
-                <p>Usage of the display might look like:</p>
+                <p>
+                    Usage of the display might look like:
+                </p>
                 <pre>
                     <code>
 // First, select the target element you want the display to be within
@@ -128,13 +131,106 @@ for (let i=5; i < 10; i++) {
                     </code>
                 </pre>
 
-                <p>The results will be:</p>
+                <p>
+                    The results will be:
+                </p>
                 <div id="displayExample"></div>
+
+                <p>
+                    Other methods you might enjoy are:
+                </p>
+                <pre>
+                    <code>
+display.centerDisplay(x,y);
+                    </code>
+                </pre>
+                <p>
+                    For when you want to center the display on a particular location (for instance, the player's position), or:
+                </p>
+                </p>
+                <pre>
+                    <code>
+display.dimensions = display.calculateDimensions();
+                    </code>
+                </pre>
+                <p>
+                    If you want to automatically determine how many tiles you need to fill the available space, given whatever size they currently are. You can also use:
+                </p>
+                <pre>
+                    <code>
+display.getTile(x,y);
+                    </code>
+                </pre>
+                <p>
+                    If you you want to do something with a particular tile.
+                </p>
+            </section>
+            <section class="random" id="random">
+                <h2>Random Numbers, and related utilities</h2>
+                <p>Generating random numbers is fun for the whole family. Here's how you do it.</p>
+                <pre>
+                    <code>
+// You can define a seed if you would like; if not, the current time is used.
+const optionalSeed = 546456732;
+
+// Start the random number generator
+const random = new Random(optionalSeed);
+
+// If you want a random number from 0 <= x < 1:
+const x = random.getRandom();
+
+// If you would like a random number in the range of lower <= y <= upper you can use getNumber.
+const lower = 0;
+const upper = 10;
+const y = random.getNumber(lower,upper);
+
+// If the given bounds are integers, it will generate integers.
+// If not, it will generate decimals.
+// If you want to specify explicitly, use the integer boolean parameter.
+const noThanksNotInteger = random.getNumber(lower,upper,false);
+
+// If you want a random element from an array, use getRandomElement.
+const coolArray = [1, 2, 3, 4, 5, 6, 7];
+const randomElement = random.getRandomElement(coolArray);
+
+// If you want to provide weights for each value, you can use getWeightedElement.
+const weightedArray = [
+    {
+        weight: 10,
+        option: "Cute dog"
+    },
+    {
+        weight: 15,
+        option: "Awesome cat"
+    },
+    {
+        weight: 1,
+        option: "Rare Franklin"
+    }
+];
+
+const randomWeightedElement = random.getWeightedElement(weightedArray);
+                    </code>
+                </pre>
+                <p>
+                    Here's some results:
+                </p>
+                <ul id="randomResults">
+                </ul>
+            </section>
+            <section class="fov" id="fov">
+                <h2>Field of View</h2>
+                <p>It's nice to see things. Roguelike Pumpkin Patch lets you do it.</p>
+                <pre>
+                    <code>
+// 
+                    </code>
+                </pre>
             </section>
         </div>
     </main>
 
 
-    <script src="./script.js"></script>
+    <script src="./scriptbundle.js"></script>
 </body>
 </html>

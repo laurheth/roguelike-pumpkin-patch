@@ -33,12 +33,12 @@ module.exports = targets.map(target=>({
 // Docs.
 module.exports.push({
     mode: 'production',
-    entry: `./${docs}/script.ts`,
+    entry: `./${docs}/script.js`,
     resolve: {
-        extensions: [ '.js', '.ts' ],
+        extensions: [ '.js' ],
     },
     output: {
-        filename: 'script.js',
+        filename: 'scriptbundle.js',
         path: path.resolve(__dirname, docs)
     }
 });
