@@ -10,7 +10,30 @@ A library to help you build a cool new roguelike in JavaScript or TypeScript. Pu
 - Random numbers, and helpful utilities to go with them
 - and more to come!
 
+
+## Getting the library
+
+You can get the library by running (once it has actually been published... come back in a week if this doesn't work yet :P):
+
+```npm install roguelike-pumpkin-patch```
+
+If you want to use a bundle, in the `dist` directory, there's both a bundled `roguelike-pumpkin-patch.js`, and a minified `roguelike-pumpkin-patch.min.js`; link to whichever version you prefer in the head of your page. You can then access the entire library via the bundled `RoguelikePumpkinPatch` object.
+
+If you're using a build system like Webpack, you can import whatever components you need directly, i.e.
+
+```import { Display, EventManager, Random, FOV, PathFinder } from "roguelike-pumpkin-patch";```
+
+You can also use the modules directly in your browser via a similar method, i.e.
+
+```import { Display } from "./node_modules/roguelike-pumpkin-patch/lib/index.js"```
+
+or even
+
+```import Display from "./node_modules/roguelike-pumpkin-patch/lib/display/Display.js"```
+
 ## Building
+
+If you want to build the library locally, these instructions are for you!
 
 Start by cloning the repository:
 
@@ -23,12 +46,6 @@ Next, install npm packages:
 Finally, build:
 
 ```npm run build```
-
-## Usage
-
-In the `dist` directory, there's both a bundled `roguelike-pumpkin-patch.js`, and a minified `roguelike-pumpkin-patch.min.js`; include whichever version you prefer in the head of your page. I would recommend unminified for development, then switch to minified for the published version.
-
-You can also import individual modules into your JavaScript or TypeScript projects.
 
 ## History
 

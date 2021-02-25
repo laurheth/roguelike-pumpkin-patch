@@ -4,19 +4,20 @@ const path = require('path');
 const src='src';
 const lib='lib';
 const dist='dist';
+const docs='docs';
 
 const targets = [
     {minimize: false, name:"roguelike-pumpkin-patch.js"},
     {minimize: true, name:"roguelike-pumpkin-patch.min.js"}
 ]
 
+// Builds
 module.exports = targets.map(target=>({
     mode: 'production',
     entry: `./${lib}/index.js`,
     optimization: {
         minimize: target.minimize
     },
-    // Recognize both .ts and .js extensions
     resolve: {
         extensions: [ '.js' ],
     },
@@ -24,7 +25,20 @@ module.exports = targets.map(target=>({
     output: {
         filename: target.name,
         path: path.resolve(__dirname, dist),
-        library: "RoguelikePumpkinPatch",
+        library: "RPP",
         libraryTarget: "umd",
     },
 }));
+
+// Docs.
+module.exports.push({
+    mode: 'production',
+    entry: `./${docs}/script.ts`,
+    resolve: {
+        extensions: [ '.js', '.ts' ],
+    },
+    output: {
+        filename: 'script.js',
+        path: path.resolve(__dirname, docs)
+    }
+});
