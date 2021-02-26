@@ -82,9 +82,9 @@ const params = {
     // Required! The display must go somewhere
     target: target,
     // Width of the display in tiles
-    width: 40,
+    width: 20,
     // Height of the display in tiles
-    height: 30,
+    height: 15,
 };
 
 // Start the display!
@@ -312,7 +312,7 @@ const canSee = (position) => {
 }
 
 // It has an optional second parameter for distance. The default is 8.
-const optionalRange = 6;
+const optionalRange = 10;
 
 // Initialize the FOV object!
 const fov = new FOV(canSee, optionalRange);
@@ -320,14 +320,127 @@ const fov = new FOV(canSee, optionalRange);
 // Choose a position for the player to be
 const playerPos = [5,5];
 
-// Now, LOOK!
-fov.look(playerPos);
+// Slightly hacky way to add the player; use a better data structure for your games!
+const mapRow = map[playerPos[1]];
+map[playerPos[1]] = mapRow.slice(0,playerPos[0]) + '@' + mapRow.slice(playerPos[0]);
 
-// Draw on the player; this could've been right in the map, too.
-fovDisplay.setTile(playerPos[0], playerPos[1], '@');                        
+// Now, LOOK!
+fov.look(playerPos);                    
                     </code>
                 </pre>
                 <div id="fovMap"></div>
+            </section>
+            <section class="events" id="events">
+                <h2>The Events System</h2>
+                <p>Events are cool. Actions are cool. How do you make them happen? Why, with the EventManager, of course!</p>
+                <pre>
+                    <code>
+// First, some setup, so we can record our output
+const simpleList = document.getElementById("simpleEventList");
+const complexList = document.getElementById("complexEventList");
+
+
+// Lets make a helper function to record our output
+const showAction = (action, list) => {
+    // Make a list item and add the action to it.
+    const listItem = document.createElement("li")
+    listItem.appendChild(document.createTextNode(action));
+    // Attach it to the list, so we can see what happens.
+    list.appendChild(listItem);
+};
+
+// There's two types of event managers you can make.
+// Lets start with the simple one. Everyone takes turns, one after the other.
+const simpleEvents = new EventManager({type:"simple"});
+
+// Usually, we want to add some actors to the system.
+// The system calls their "act" method.
+
+const simpleGoblin = {
+    act: ()=>showAction("The Goblin goblins!", simpleList)
+}
+
+const simpleCat = {
+    act: ()=>showAction("The cat meows!", simpleList)
+}
+
+// Add them to the event manager
+simpleEvents.add(simpleGoblin);
+simpleEvents.add(simpleCat);
+
+// You can also add callback functions on their own, as events or whatever your heart pleases.
+// They can repeat forever...
+simpleEvents.add({
+    callback: ()=>showAction("Drip drip goes the faucet.", simpleList),
+    repeats: true
+})
+
+// Repeat a few times
+simpleEvents.add({
+    callback: ()=>showAction("Rushing wind! Oh no!", simpleList),
+    repeats: 2
+})
+
+// Or not repeat at all!
+simpleEvents.add({
+    callback: ()=>showAction("The house of cards falls over. Whoops!", simpleList)
+});
+
+// Then you just kick it off in your preferred manner.
+// Each time you call advance, it will step forward one step.
+// If act returns a promise (say, if you're waiting for player input)
+// it will wait for that action to conclude.
+for(let i=0;i<20;i++) {
+    simpleEvents.advance();
+}
+
+// The second type of event manager is complex:
+const complexEvents = new EventManager({type:"complex"});
+
+// The complex event manager accepts different delays for different actors
+
+const fastCat = {
+    act:()=>showAction("Fast cat nyooms!", complexList)
+}
+
+const slowOgre = {
+    act:()=>showAction("Slow ogre is sloooow", complexList)
+}
+
+// The delay property defines how slow an actor is
+complexEvents.add({
+    actor:fastCat,
+    delay:1
+});
+
+complexEvents.add({
+    actor:slowOgre,
+    delay:5
+});
+
+// Or how long an event takes
+complexEvents.add({
+    callback:()=>showAction("The mail has just arrived. Sweet!", complexList),
+    delay: 16
+});
+
+// Advance the clock...
+for(let i=0;i<20;i++) {
+    complexEvents.advance();
+}
+                        
+                    </code>
+                </pre>
+                <div>
+                    <h3>Simple Event System:</h3>
+                    <ul id="simpleEventList"></ul>
+                    <h3>Complex Event System:</h3>
+                    <ul id="complexEventList"></ul>
+                </div>
+            </section>
+            <section class="pathfinder" id="pathfinder">
+                <h2>Pathfinding</h2>
+                <p>Finding your way from one place to another can be tough. We can help!</p>
             </section>
         </div>
     </main>
