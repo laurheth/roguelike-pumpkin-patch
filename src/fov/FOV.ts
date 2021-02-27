@@ -51,7 +51,6 @@ export default class FOV {
                         this.isInShadows(angleTo-angularSize, shadows )) {
                         continue;
                     }
-                    
                     // Now, test if we can see through the tile
                     if(!this.canSee(lookPos)) {
                         // Square is opaque! Add its shadow
@@ -81,7 +80,7 @@ export default class FOV {
     /** Get angular size of a square */
     angularSize(startPosition: Array<number>, endPosition: Array<number>) {
         const distance = this.distance(startPosition,endPosition);
-        return 360*Math.atan(1/(distance))/Math.PI;
+        return 360*Math.atan(1/(2*distance))/Math.PI;
     };
 
     /** Get distance */

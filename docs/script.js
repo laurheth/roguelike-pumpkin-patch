@@ -188,6 +188,11 @@ fovDisplay.tileSize = fovDisplay.calculateTileSize();
 const canSee = (position) => {
     const x = position[0];
     const y = position[1];
+
+    // Make sure it's even on the map
+    if ( x<0 || x>=width || y<0 || y>=height) {
+        return false;
+    }
     const tile = map[y][x];
 
     // First, regardless of success or not, see this tile
