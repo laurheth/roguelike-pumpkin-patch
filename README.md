@@ -15,7 +15,7 @@ See below for instructions on getting or building the library! For usage instruc
 
 ## Getting the library
 
-You can get the library by running (once it has actually been published... come back in a week if this doesn't work yet :P):
+You can get the library by running:
 
 ```npm install roguelike-pumpkin-patch```
 
