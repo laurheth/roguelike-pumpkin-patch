@@ -51,4 +51,4 @@ Finally, build:
 
 ## History
 
-This was partially inspired by [rot.js](http://ondras.github.io/rot.js/hp/), which is super cool and I've used for several projects. I wanted to try my hand at building a library, and did much of the work on this as part of [pumpkin-related game](https://github.com/laurheth/pumpkin-oubliette) (hence the pumpkin theme). I made it to help myself with future projects, and I hope that it will be useful for you as well!
+This was partially inspired by [rot.js](http://ondras.github.io/rot.js/hp/), which is super cool and I've used for several projects. I wanted to try my hand at building a library, and did much of the work on this as part of [pumpkin-related game](https://laurheth.itch.io/the-pumpkin-oubliette) (hence the pumpkin theme). I made it to help myself with future projects, and I hope that it will be useful for you as well!
