@@ -25,7 +25,7 @@ If you're using a build system like Webpack, you can import whatever components 
 
 ```import { Display, EventManager, Random, FOV, PathFinder } from "roguelike-pumpkin-patch";```
 
-You can also use the modules directly in your browser via a similar method, i.e.
+You can also use the modules directly in your browser (or when using tsc) via a similar method, i.e.
 
 ```import { Display } from "./node_modules/roguelike-pumpkin-patch/lib/index.js"```
 
