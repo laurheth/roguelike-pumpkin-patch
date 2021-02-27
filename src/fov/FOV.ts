@@ -29,12 +29,24 @@ export default class FOV {
         const newShadows:Array<Shadow> = [];
 
         // From nearby to far away
+        let i=0;
+        let j=0;
         for (let distance=1;distance<=range;distance++) {
             // Get square shell around position
-            for (let i=-distance;i<=distance;i++) {
-                for (let j=-distance;j<=distance;j++) {
-                    if (Math.abs(i) !== distance && Math.abs(j) !== distance) {
-                        continue;
+            for (let side=0;side<4;side++) {
+                for (let edge=-distance;edge<=distance;edge++) {
+                    if(side===0) {
+                        i=edge;
+                        j=distance;
+                    } else if (side===1) {
+                        j=edge;
+                        i=distance;
+                    } else if (side===2) {
+                        i=edge;
+                        j=-distance;
+                    } else {
+                        j=edge;
+                        i=-distance;
                     }
                     const lookPos = [position[0]+i, position[1]+j];
                     const dist = this.distance(position, lookPos);
@@ -45,14 +57,15 @@ export default class FOV {
                     // In shadows? Skip.
                     const angleTo = this.angleTo(position, lookPos);
                     const angularSize = this.angularSize(position, lookPos) / 2;
+                    let inShadows = false;
                     if(
                         this.isInShadows(angleTo, shadows) &&
                         this.isInShadows(angleTo+angularSize, shadows) &&
                         this.isInShadows(angleTo-angularSize, shadows )) {
-                        continue;
+                        inShadows=true;
                     }
                     // Now, test if we can see through the tile
-                    if(!this.canSee(lookPos)) {
+                    if(inShadows || !this.canSee(lookPos)) {
                         // Square is opaque! Add its shadow
                         newShadows.push({
                             startAngle: angleTo - angularSize,
@@ -63,7 +76,12 @@ export default class FOV {
             }
             // Add newShadows to shadows
             while(newShadows.length>0) {
-                shadows.push(newShadows.pop());
+                // shadows.push(newShadows.pop());
+                this.combineShadow(shadows, newShadows.pop());
+            }
+            // Check if we should call it quits
+            if (shadows.length === 1 && shadows[0].endAngle - shadows[0].startAngle >= 360) {
+                return;
             }
         }
     };
@@ -74,7 +92,8 @@ export default class FOV {
     angleTo(startPosition: Array<number>, endPosition: Array<number>) {
         const y = endPosition[1] - startPosition[1];
         const x = endPosition[0] - startPosition[0];
-        return 180*Math.atan2(y,x)/Math.PI;
+        const angle =  180*Math.atan2(y,x)/Math.PI;
+        return (angle>=0) ? angle : angle + 360;
     };
 
     /** Get angular size of a square */
@@ -90,12 +109,36 @@ export default class FOV {
 
     /** Check if in shadows */
     isInShadows(angle:number, shadows:Array<Shadow>): boolean {
-        const negAngle = (angle < 0) ? angle + 360 : angle - 360;
+        const negAngle = angle - 360;
         for (const shadow of shadows) {
             if ((angle <= shadow.endAngle && angle >= shadow.startAngle) || (negAngle <= shadow.endAngle && negAngle >= shadow.startAngle)) {
                 return true;
             }
         }
         return false;
+    }
+
+    /** Add a shadow to the shadow array */
+    combineShadow(shadows:Array<Shadow>, newShadow:Shadow) {
+        const overLapArr = [];
+        for (let i=0;i<shadows.length;i++) {
+            const shadow = shadows[i];
+            // Check if they overlap
+            if (newShadow.startAngle < shadow.endAngle && newShadow.endAngle > shadow.startAngle) {
+                newShadow.startAngle = Math.min(shadow.startAngle, newShadow.startAngle);
+                newShadow.endAngle = Math.max(shadow.endAngle, newShadow.endAngle);
+                overLapArr.push(i);
+            }
+        }
+        if (overLapArr.length > 0) {
+            const mainShadow = shadows[overLapArr.shift()];
+            mainShadow.startAngle = newShadow.startAngle;
+            mainShadow.endAngle = newShadow.endAngle;
+            for (let i = overLapArr.length-1; i>=0; i--) {
+                shadows.splice(overLapArr[i],1);
+            }
+        } else {
+            shadows.push(newShadow);
+        }
     }
 }

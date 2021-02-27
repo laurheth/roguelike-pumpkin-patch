@@ -58,6 +58,22 @@ describe("Test field of view.", ()=>{
         }
     });
 
+    test("Range 20 FOV test.", ()=>{
+        const fov = new FOV(canSee, 20);
+
+        for(let x=0;x<map[0].length;x++) {
+            for (let y=0;y<map.length;y++) {
+                if (map[y][x] === '.') {
+                    createEmptyMap(emptyMap);
+                    fov.look([x,y]);
+                    emptyMap[y] = emptyMap[y].slice(0,x) + '@' + emptyMap[y].slice(x+1);
+                    expect(emptyMap).toMatchSnapshot();
+                }
+
+            }
+        }
+    });
+
     test("Range 2 FOV test.", ()=>{
         const fov = new FOV(canSee, 2);
 
