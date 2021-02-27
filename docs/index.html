@@ -185,8 +185,8 @@ const colorTarget = document.querySelector(".colorDisplay");
 const colorDisplay = new Display({target:colorTarget, width: 10, height: 10});
 
 // Draw some stuff
-for(let i=0;i<10;i++) {
-    for(let j=0;j<10;j++) {
+for(let i=0;i < 10;i++) {
+    for(let j=0;j < 10;j++) {
         if (i===0 || j===0 || i===9 || j===9) {
             // Did you know you can use a shorthand here? Now you do!
             colorDisplay.setTile(i,j,'#');
@@ -211,9 +211,9 @@ colorDisplay.tileSize = colorDisplay.calculateTileSize();
 
 // Center it on the player
 colorDisplay.centerDisplay(3,3);
-                    </code>
-                </pre>
+                </code></pre>
                 <div id="colorfulDisplay" class="colorDisplay"></div>
+                <p>Psychadelic!</p>
             </section>
             <section class="random" id="random">
                 <h2>Random Numbers, and related utilities</h2>
@@ -267,6 +267,9 @@ const randomWeightedElement = random.getWeightedElement(weightedArray);
                 <ul id="randomResults">
                 </ul>
                 <button id="randomButton">Get me more random stuff!</button>
+                <p>
+                    The random number generator uses an implementation of the middle square Weyl sequence RNG, described in <a href="https://arxiv.org/abs/1704.00358v5">Widynski (2017)</a>.
+                </p>
             </section>
             <section class="fov" id="fov">
                 <h2>Field of View</h2>
