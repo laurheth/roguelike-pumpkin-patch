@@ -107,6 +107,7 @@ window.addEventListener("resize",()=>{
 });
 
 // Lets draw some stuff
+// Note, x and y are relative to the top left corner!
 for (let x=0; x < params.width; x++) {
     for (let y=0; y < params.height; y++) {
         // Draw some walls
@@ -168,7 +169,7 @@ display.dimensions = display.calculateDimensions();
 const tile = display.getTile(x,y);
                 </code></pre>
                 <p>
-                    Lastly, while the default style for the display is a black background with white foreground, this is handled by CSS inserted into the pages head; you can just override it, and set any other styles you'd like, with your own stylesheet by accessing pumpkin-container. The only detail that is handled inline is the font size, which is tied to tile size, and even that can be changed by using the tileSize property (see earlier!)
+                    Lastly, while the default style for the display is a black background with white foreground, this is handled by CSS inserted into the pages head; you can just override it, and set any other styles you'd like, with your own stylesheet by accessing pumpkin-container. The only details that are handled inline are the font size, tile size, and tile position, and you can use the tileSize setter to change the first two.
                 </p>
                 <pre><code>
 .pumpkin-container.colorDisplay {
@@ -533,7 +534,7 @@ pathDisplay.updateTile(startPos[0], startPos[1], '@');
     <footer>
         <div class="wrapper">
             <p>Syntax highlighting in code blocks from <a href="https://highlightjs.org/">highlight.js</a>; it's pretty cool, you should try it.</p>
-            <p>Roguelike Pumpkin Patch is &copy; <a href="https://laurheth.itch.io/">Lauren Hetherington 2021</a></a></p>
+            <p>Roguelike Pumpkin Patch is &copy; <a href="https://laurheth.itch.io/">Lauren Hetherington</a> 2021</p>
         </div>
     </footer>
 
