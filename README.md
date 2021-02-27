@@ -2,6 +2,8 @@
 
 A library to help you build a cool new roguelike in JavaScript or TypeScript. Pumpkin vines can get pretty long and gnarly, but your code doesn't have to.
 
+See below for instructions on getting or building the library! For usage instructions after that, head over to the [documentation](https://laurheth.github.io/roguelike-pumpkin-patch/)!
+
 ## Current Features
 - HTML and CSS based display; you can use all the CSS features you know and love
 - A cool event manager
