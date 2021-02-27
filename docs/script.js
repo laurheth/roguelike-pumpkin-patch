@@ -19,6 +19,12 @@ const display = new Display(params);
 // Set the tile size so that it fits its container
 display.tileSize = display.calculateTileSize();
 
+// One cool thing you can do is add a listener for window resizing
+// Keep your display looking good!
+window.addEventListener("resize",()=>{
+    display.tileSize = display.calculateTileSize();
+});
+
 // Lets draw some stuff
 for (let x=0; x < params.width; x++) {
     for (let y=0; y < params.height; y++) {
@@ -164,10 +170,10 @@ const map = [
     "#..#.....#....#....#",
     "#..#.....###...##..#",
     "#..#.....#.........#",
-    "#.............#....#",
-    "#........#.........#",
+    "#.............####.#",
+    "#........#....#....#",
     "####...###....#....#",
-    "#........#.........#",
+    "#........#....#....#",
     "####################",
 ];
 const width = map[0].length;
@@ -204,7 +210,7 @@ const canSee = (position) => {
 }
 
 // It has an optional second parameter for distance. The default is 8.
-const optionalRange = 10;
+const optionalRange = 20;
 
 // Initialize the FOV object!
 const fov = new FOV(canSee, optionalRange);
@@ -214,7 +220,7 @@ const playerPos = [5,5];
 
 // Slightly hacky way to add the player; use a better data structure for your games!
 const mapRow = map[playerPos[1]];
-map[playerPos[1]] = mapRow.slice(0,playerPos[0]) + '@' + mapRow.slice(playerPos[0]);
+map[playerPos[1]] = mapRow.slice(0,playerPos[0]) + '@' + mapRow.slice(playerPos[0]+1);
 
 // Now, LOOK!
 fov.look(playerPos);
@@ -312,3 +318,68 @@ complexEvents.add({
 for(let i=0;i<20;i++) {
     complexEvents.advance();
 }
+
+map[playerPos[1]] = mapRow.slice(0,playerPos[0]) + '.' + mapRow.slice(playerPos[0]+1);
+
+// First, lets setup another display! I want to draw the path we find.
+// And lets start up a display to use.
+// We're going to use the same map from the FOV section.
+const pathDisplayParams = {
+    target: document.getElementById("pathDisplay"),
+    width: width,
+    height: height,
+};
+const pathDisplay = new Display(pathDisplayParams);
+pathDisplay.tileSize = pathDisplay.calculateTileSize();
+
+// Lets draw the map to start
+map.forEach((row,y)=>row.split('').forEach((tile,x)=>{
+    pathDisplay.setTile(x,y,tile);
+}));
+
+// Now, lets setup the pathfinder!
+// The PathFinder takes a "canPass" callback to determine what is passable.
+// This looks similar to the canSee callback from before, but it doesn't have to.
+const pathfinder = new PathFinder({
+    canPass:([x,y])=>{
+        // Make sure it's even on the map
+        if ( x<0 || x>=width || y<0 || y>=height) {
+            return false;
+        }
+        const tile = map[y][x];
+
+        // Next, use whatever criteria we want to decide if it is passable.
+        // In this case, if it's not a wall (or # character), we can walk through it.
+        return tile !== '#';
+    }
+});
+
+// Let choose a starting position, and a target position!
+const startPos = [1,8];
+const endPos = [15,8];
+
+// It can also take an optional "orthogonalOnly" parameter.
+// This sets whether or not the pathfinder will use diagonals.
+const optionalOrthogonalOnly = false;
+
+// Now, lets find the path!
+const path = pathfinder.findPath(startPos, endPos, optionalOrthogonalOnly);
+
+// Draw it onto the map to take a look at it.
+path.forEach(([x,y])=>{
+    pathDisplay.updateTile(x,y,{
+        content:'X',
+        className: "pathMarker"
+    })
+});
+
+// Note that the drawn path doesn't include the starting position.
+// This is so you can just grab path[0] to get the first step in your journey.
+// Lets draw on the player, too, for illustration.
+pathDisplay.updateTile(startPos[0], startPos[1], '@');
+
+window.addEventListener("resize",()=>{
+    colorDisplay.tileSize = colorDisplay.calculateTileSize();
+    fovDisplay.tileSize = fovDisplay.calculateTileSize();
+    pathDisplay.tileSize = pathDisplay.calculateTileSize();
+});

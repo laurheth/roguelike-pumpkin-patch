@@ -5,16 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roguelike Pumpkin Patch Documentation</title>
+    <!-- Favicon stuff -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <!-- Syntax Highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/railscasts.min.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cousine:wght@700&family=Zilla+Slab&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="./style.css">
+    <!-- Do the actual syntax highlighting -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
-    <header>
-        <div class="wrapper">
+    <div class="wrapper">
+        <header>
             <h1>Roguelike Pumpkin Patch Documentation</h1>
-            <p>Roguelike Pumpkin Patch is a library for building roguelikes that run in your browser, in TypeScript or JavaScript. This documentation is meant to show you how to actually use the library. Check out the <a href="https://github.com/laurheth/roguelike-pumpkin-patch">readme here</a> for setup instructions!</p>
+            <p>Roguelike Pumpkin Patch is a library for building roguelikes that run in your browser, written in TypeScript or JavaScript. This documentation is meant to show you how to actually use the library. Check out the <a href="https://github.com/laurheth/roguelike-pumpkin-patch">readme here</a> for setup instructions!</p>
             <nav>
                 <ul><a href="#display">Display</a></ul>
                 <ul><a href="#random">Random numbers</a></ul>
@@ -22,10 +33,10 @@
                 <ul><a href="#events">The Event System</a></ul>
                 <ul><a href="#pathfinder">Pathfinding</a></ul>
             </nav>
-        </div>
-    </header>
-    <main>
-        <div class="wrapper">
+        </header>
+    </div>
+    <div class="wrapper">
+        <main>
             <section class="display" id="display">
                 <h2>The Display</h2>
 
@@ -33,8 +44,7 @@
                     The display is where most of the magic happens. Contains a multitude of tiles, and is based on HTML and CSS. Suppose you have the following as your CSS:
                 </p>
 
-                <pre>
-                    <code>
+                <pre><code>
 /* You can style the tiles with pumpkin-tile! You can also target pumpkin-display and pumpkin-container */
 .pumpkin-tile {
     font-family: monospace;
@@ -43,7 +53,6 @@
 /* The display will fit the container you put it in; make sure it has a size! */
 .pumpkin-container {
     height: 400px;
-    border: 2px solid gray;
 }
 
 /* Just some styles that you think look cool */
@@ -66,14 +75,12 @@
     font-family: sans-serif;
 }
 
-                    </code>
-                </pre>
+                </code></pre>
 
                 <p>
                     Usage of the display might look like:
                 </p>
-                <pre>
-                    <code>
+                <pre><code>
 // First, select the target element you want the display to be within
 const target = document.getElementById("displayExample");
 
@@ -92,6 +99,12 @@ const display = new Display(params);
 
 // Set the tile size so that it fits its container
 display.tileSize = display.calculateTileSize();
+
+// One cool thing you can do is add a listener for window resizing
+// Keep your display looking good!
+window.addEventListener("resize",()=>{
+    display.tileSize = display.calculateTileSize();
+});
 
 // Lets draw some stuff
 for (let x=0; x < params.width; x++) {
@@ -128,8 +141,7 @@ for (let i=5; i < 10; i++) {
     display.updateTile(i,i,{className:"superAwesome"});
 }
 
-                    </code>
-                </pre>
+                </code></pre>
 
                 <p>
                     The results will be:
@@ -139,42 +151,33 @@ for (let i=5; i < 10; i++) {
                 <p>
                     There are some other methods you might enjoy. If you want to center the display on a particular location (i.e. the player's position, or a security camera, or a cutscene, etc), you can use centerDisplay:
                 </p>
-                <pre>
-                    <code>
+                <pre><code>
 display.centerDisplay(x,y);
-                    </code>
-                </pre>
+                </code></pre>
                 <p>
                     If you want to automatically determine how many tiles you need to fill the available space, given whatever size they currently are, you can use calculateDimensions:
                 </p>
                 </p>
-                <pre>
-                    <code>
+                <pre><code>
 display.dimensions = display.calculateDimensions();
-                    </code>
-                </pre>
+                </code></pre>
                 <p>
                     If you want to do something more in depth with a particular tile, you can use getTile to access it:
                 </p>
-                <pre>
-                    <code>
+                <pre><code>
 const tile = display.getTile(x,y);
-                    </code>
-                </pre>
+                </code></pre>
                 <p>
                     Lastly, while the default style for the display is a black background with white foreground, this is handled by CSS inserted into the pages head; you can just override it, and set any other styles you'd like, with your own stylesheet by accessing pumpkin-container. The only detail that is handled inline is the font size, which is tied to tile size, and even that can be changed by using the tileSize property (see earlier!)
                 </p>
-                <pre>
-                    <code>
+                <pre><code>
 .pumpkin-container.colorDisplay {
     background: linear-gradient(#FF00FF, #FFFF00);
     color: darkslateblue;
     font-weight: bold;
 }
-                    </code>
-                </pre>
-                <pre>
-                    <code>
+                </code></pre>
+                <pre><code>
 // Select the element we want to be the target.
 const colorTarget = document.querySelector(".colorDisplay");
 
@@ -257,8 +260,7 @@ const weightedArray = [
 ];
 
 const randomWeightedElement = random.getWeightedElement(weightedArray);
-                    </code>
-                </pre>
+                </code></pre>
                 <p>
                     Here's some results:
                 </p>
@@ -269,8 +271,7 @@ const randomWeightedElement = random.getWeightedElement(weightedArray);
             <section class="fov" id="fov">
                 <h2>Field of View</h2>
                 <p>It's nice to see things. Roguelike Pumpkin Patch lets you do it.</p>
-                <pre>
-                    <code>
+                <pre><code>
 // Here's a cool map to live in
 const map = [
     "####################",
@@ -278,10 +279,10 @@ const map = [
     "#..#.....#....#....#",
     "#..#.....###...##..#",
     "#..#.....#.........#",
-    "#.............#....#",
-    "#........#.........#",
+    "#.............####.#",
+    "#........#....#....#",
     "####...###....#....#",
-    "#........#.........#",
+    "#........#....#....#",
     "####################",
 ];
 const width = map[0].length;
@@ -318,7 +319,8 @@ const canSee = (position) => {
 }
 
 // It has an optional second parameter for distance. The default is 8.
-const optionalRange = 10;
+// Be careful not to set this too high though.
+const optionalRange = 20;
 
 // Initialize the FOV object!
 const fov = new FOV(canSee, optionalRange);
@@ -332,15 +334,16 @@ map[playerPos[1]] = mapRow.slice(0,playerPos[0]) + '@' + mapRow.slice(playerPos[
 
 // Now, LOOK!
 fov.look(playerPos);                    
-                    </code>
-                </pre>
+                </code></pre>
                 <div id="fovMap"></div>
+                <p>
+                    FOV currently uses a shadow casting algorithm. It works well in most cases, but be careful not to set the range too high, especially if your game has large outdoor areas.
+                </p>
             </section>
             <section class="events" id="events">
                 <h2>The Events System</h2>
                 <p>Events are cool. Actions are cool. How do you make them happen? Why, with the EventManager, of course!</p>
-                <pre>
-                    <code>
+                <pre><code>
 // First, some setup, so we can record our output
 const simpleList = document.getElementById("simpleEventList");
 const complexList = document.getElementById("complexEventList");
@@ -431,12 +434,11 @@ complexEvents.add({
 });
 
 // Advance the clock...
-for(let i=0;i<20;i++) {
+for(let i=0;i < 20;i++) {
     complexEvents.advance();
 }
                         
-                    </code>
-                </pre>
+                </code></pre>
                 <div>
                     <h3>Simple Event System:</h3>
                     <ul id="simpleEventList"></ul>
@@ -447,10 +449,90 @@ for(let i=0;i<20;i++) {
             <section class="pathfinder" id="pathfinder">
                 <h2>Pathfinding</h2>
                 <p>Finding your way from one place to another can be tough. We can help!</p>
-            </section>
-        </div>
-    </main>
 
+                <pre><code>
+// First, lets setup another display! I want to draw the path we find.
+// And lets start up a display to use.
+// We're going to use the same map from the FOV section.
+const pathDisplayParams = {
+    target: document.getElementById("pathDisplay"),
+    width: width,
+    height: height,
+};
+const pathDisplay = new Display(pathDisplayParams);
+pathDisplay.tileSize = pathDisplay.calculateTileSize();
+
+// Lets draw the map to start
+map.forEach((row,y)=>row.split('').forEach((tile,x)=>{
+    pathDisplay.setTile(x,y,tile);
+}));
+
+// Now, lets setup the pathfinder!
+// The PathFinder takes a "canPass" callback to determine what is passable.
+// This looks similar to the canSee callback from before, but it doesn't have to.
+const pathfinder = new PathFinder({
+    canPass:([x,y])=>{
+        // Make sure it's even on the map
+        if ( x<0 || x>=width || y<0 || y>=height) {
+            return false;
+        }
+        const tile = map[y][x];
+
+        // Next, use whatever criteria we want to decide if it is passable.
+        // In this case, if it's not a wall (or # character), we can walk through it.
+        return tile !== '#';
+    }
+});
+
+// Let choose a starting position, and a target position!
+const startPos = [1,8];
+const endPos = [15,8];
+
+// It can also take an optional "orthogonalOnly" parameter.
+// This sets whether or not the pathfinder will use diagonals.
+const optionalOrthogonalOnly = false;
+
+// Now, lets find the path!
+const path = pathfinder.findPath(startPos, endPos, optionalOrthogonalOnly);
+
+// Draw it onto the map to take a look at it.
+path.forEach(([x,y])=>{
+    pathDisplay.updateTile(x,y,{
+        content:'X',
+        className: "pathMarker"
+    })
+});
+
+// Note that the drawn path doesn't include the starting position.
+// This is so you can just grab path[0] to get the first step in your journey.
+// Lets draw on the player, too, for illustration.
+pathDisplay.updateTile(startPos[0], startPos[1], '@');
+                </code></pre>
+                <div id="pathDisplay"></div>
+                <p>
+                    Other cool parameters that you can give the PathFinder include:
+                </p>
+                <ul>
+                    <li>
+                        a weight callback function, to set if certain tiles cost more to walk through (i.e. mud, rocks, mud, monsters...)
+                    </li>
+                    <li>
+                        A custom metric callback function. Currently, the PathFinder uses the A* pathfinding algorithm with the Manhattan metric; you can provide your own metric instead!
+                    </li>
+                    <li>
+                        A maxIterations number. If you want to prevent monsters from calculating extremely large paths, you can prevent that by placing a cap on it.
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="wrapper">
+            <p>Syntax highlighting in code blocks from <a href="https://highlightjs.org/">highlight.js</a>; it's pretty cool, you should try it.</p>
+            <p>Roguelike Pumpkin Patch is &copy; <a href="https://laurheth.itch.io/">Lauren Hetherington 2021</a></a></p>
+        </div>
+    </footer>
 
     <script src="./scriptbundle.js"></script>
 </body>
