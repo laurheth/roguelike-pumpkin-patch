@@ -23,7 +23,7 @@ If you want to use a bundle, in the `dist` directory, there's both a bundled `ro
 
 You can also get the above bundle from unpkg:
 
-```https://unpkg.com/roguelike-pumpkin-patch@1.0.0/dist/roguelike-pumpkin-patch.min.js```
+```<script src="https://unpkg.com/roguelike-pumpkin-patch/dist/roguelike-pumpkin-patch.min.js"></script>```
 
 If you're using a build system like Webpack, you can import whatever components you need directly, i.e.
 
