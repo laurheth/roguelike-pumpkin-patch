@@ -383,3 +383,22 @@ window.addEventListener("resize",()=>{
     fovDisplay.tileSize = fovDisplay.calculateTileSize();
     pathDisplay.tileSize = pathDisplay.calculateTileSize();
 });
+
+// WFC display
+
+const wfcDisplayParams = {
+    target: document.getElementById("wfcDisplay"),
+    width: width,
+    height: height,
+};
+const wfcDisplay = new Display(wfcDisplayParams);
+
+// The WFC generator takes an input "image", which it uses to figure out rules for the output.
+const inputImage = [
+    ".#..",
+    ".#..",
+    "####",
+    ".#..",
+];
+
+// const 

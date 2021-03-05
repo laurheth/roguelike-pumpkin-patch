@@ -33,6 +33,7 @@ module.exports = targets.map(target=>({
 // Docs.
 module.exports.push({
     mode: 'production',
+    devtool: 'inline-source-map',
     entry: `./${docs}/script.js`,
     resolve: {
         extensions: [ '.js' ],
