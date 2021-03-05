@@ -1,4 +1,4 @@
-import { Display, EventManager, Random, PathFinder, FOV } from '../lib/index';
+import { Display, EventManager, Random, PathFinder, FOV, WFC } from '../lib/index';
 
 // First, select the target element you want the display to be within
 const target = document.getElementById("displayExample");
@@ -401,4 +401,4 @@ const inputImage = [
     ".#..",
 ];
 
-// const 
+const wfc = new WFC({input:inputImage,n:3,repeatInput:true});

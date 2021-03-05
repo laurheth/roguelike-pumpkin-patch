@@ -1,18 +1,18 @@
 /**
  * A tile, as defined for Wave Function Collapse purposes
  */
-class Tile {
+export default class WfcTile {
     readonly contents:Array<Array<any>>;
 
     constructor(input:Array<Array<any>>) {
         this.contents = input.map(row=>[...row]);
     }
 
-    equals(tile:Tile):boolean {
+    equals(tile:WfcTile):boolean {
         return this.compatible(tile,0,0);
     }
 
-    compatible(tile:Tile, x:-1|0|1, y:-1|0|1):boolean {
+    compatible(tile:WfcTile, x:-1|0|1, y:-1|0|1):boolean {
         return this.contents.every((row,j)=>{
             return row.every((val,i)=>{
                 const xPos = i + x;
