@@ -420,19 +420,16 @@ wfcDisplayTwo.tileSize = wfcDisplayTwo.calculateTileSize();
 
 // The WFC generator takes an input "image", which it uses to figure out rules for the output.
 const inputImageTwo = [
-    "    #.#        ",
-    "    #.#        ",
-    "    #.#        ",
-    "#####.##       ",
-    ".......########",
-    "####...........",
-    "   ##.#########",
-    "    #.#        ",
-    "   ##.##  #####",
-    "####...####...#",
-    "...............",
-    "####...####...#",
-    "   ##.##  #####",
+    "                 ",
+    "             X   ",
+    "    X#       #   ",
+    "     #       #   ",
+    "     #  X    #   ",
+    "     #########   ",
+    "     #     #     ",
+    "     #     X     ",
+    "     X           ",
+    "                 ",
 ];
 
 const wfcTwo = new WFC({input:inputImageTwo,n:3,repeatInput:true});

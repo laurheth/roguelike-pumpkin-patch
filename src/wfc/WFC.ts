@@ -222,7 +222,7 @@ export default class WFC {
             doneList.push(options);
 
             // Propagate that choice to the other tiles
-            this.propogate(waveFunction, options.position, repeatOutput);
+            this.applyAdjacency(waveFunction, options.position, repeatOutput);
 
             // Reduce the cap to avoid infinite looping.
             cap--;
@@ -262,7 +262,23 @@ export default class WFC {
     }
 
     /** Apply adjacency rules */
-    propogate(waveFunction:Array<Array<Options>>, [x,y]:[number,number], repeatOutput:boolean) {
+    applyAdjacency(waveFunction:Array<Array<Options>>, [x,y]:[number,number], repeatOutput:boolean, backTrack=false) {
+        const toDoTiles:Array<Options> = [waveFunction[y][x]];
+        const doneTiles:Array<Options> = [];
+
+        while(toDoTiles.length > 0) {
+            const doTile = toDoTiles.pop();
+            this.propogate(waveFunction, doTile.position, repeatOutput, doneTiles).forEach(newTile=>{
+                toDoTiles.push(newTile);
+            });
+            if (!backTrack) {
+                doneTiles.push(doTile);
+            }
+        }
+    }
+
+    /** Individual propogation step */
+    propogate(waveFunction:Array<Array<Options>>, [x,y]:[number,number], repeatOutput:boolean, ignoreList:Array<Options>=[]):Array<Options> {
         const options:Options = waveFunction[y][x];
 
         const aggregateRules:Rule = {
@@ -287,6 +303,10 @@ export default class WFC {
         aggregateRules.left = aggregateRules.left.filter((x,i,arr)=>arr.indexOf(x)===i);
         aggregateRules.right = aggregateRules.right.filter((x,i,arr)=>arr.indexOf(x)===i);
 
+        // Maintain list of next tiles to go to
+        const nextTiles:Array<Options> = [];
+
+        // Apply for each direction
         const steps:Array<"up"|"down"|"left"|"right"> = ["up","down","left","right"];
         const stepDirections = {
             up:[0,-1],
@@ -304,15 +324,20 @@ export default class WFC {
                 yy = yy % waveFunction.length;
             }
             if (xx>=0 && xx<waveFunction[0].length && yy>=0 && yy<waveFunction.length) {
+                if (ignoreList.includes(waveFunction[yy][xx])) {
+                    return;
+                }
                 const beforeLength = waveFunction[yy][xx].options.length;
                 waveFunction[yy][xx].options = waveFunction[yy][xx].options.filter(x=>{
                     return aggregateRules[step].includes(x);
                 })
 
                 if (beforeLength > waveFunction[yy][xx].options.length) {
-                    this.propogate(waveFunction,[xx,yy],repeatOutput);
+                    // this.propogate(waveFunction,[xx,yy],repeatOutput);
+                    nextTiles.push(waveFunction[yy][xx]);
                 }
             }
         });
+        return nextTiles;
     }
 }
