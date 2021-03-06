@@ -402,13 +402,14 @@ const inputImage = [
 ];
 
 const wfc = new WFC({input:inputImage,n:3,repeatInput:true});
-const output = wfc.generate({width:20,height:20,repeatOutput:true});
-
-output.forEach((row,j)=>{
-    row.forEach((col,i)=>{
-        wfcDisplay.setTile(i,j,col);
+wfc.generate({width:20,height:20,repeatOutput:true}).then(result=>{
+    result.forEach((row,j)=>{
+        row.forEach((col,i)=>{
+            wfcDisplay.setTile(i,j,col);
+        });
     });
 });
+
 
 const wfcDisplayParamsTwo = {
     target: document.getElementById("wfcDisplayTwo"),
@@ -433,10 +434,11 @@ const inputImageTwo = [
 ];
 
 const wfcTwo = new WFC({input:inputImageTwo,n:3,repeatInput:true});
-const outputTwo = wfcTwo.generate({width:20,height:20,repeatOutput:true});
-
-outputTwo.forEach((row,j)=>{
-    row.forEach((col,i)=>{
-        wfcDisplayTwo.setTile(i,j,col);
+wfcTwo.generate({width:20,height:20,repeatOutput:true}).then(result=>{
+    result.forEach((row,j)=>{
+        row.forEach((col,i)=>{
+            wfcDisplayTwo.setTile(i,j,col);
+        });
     });
 });
+

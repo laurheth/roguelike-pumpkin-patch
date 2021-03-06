@@ -165,11 +165,19 @@ export default class WFC {
 
         return [rules, frequencies];
     }
+    /**
+     * Generate an output image.
+     */
+    generate(params:WFCOutputParams):Promise<Array<Array<any>>> {
+        return new Promise((resolve,reject)=>{
+            this.generateSync(params, resolve, reject);
+        });
+    }
 
     /**
      * Generate an output image.
      */
-    public generate(params:WFCOutputParams):Array<Array<any>> {
+    private generateSync(params:WFCOutputParams, resolve:Function, reject:Function) {
         const { width, height, repeatOutput, ...rest } = params;
 
         // Initialize with all tiles being possible
@@ -199,35 +207,37 @@ export default class WFC {
         // TODO: Add step for applying constraints to the image
 
         // Begin the main loop!
-        // Put a hard cap on the duration, don't want to fuck with someones browser
-        let cap = width*height+1;
-        while(entropyList.length>0 && cap>=0) {
-            // Sort the entropyList, to put the option with fewest possibilities first
-            entropyList.sort((a,b)=>{
-                return a.options.length - b.options.length;
-            });
-
-            // Get the first set of options
-            const options = entropyList.shift();
-
-            // Make sure it's length is not 0. If it is, we fucked up.
-            if (options.options.length <= 0) {
-                // TODO: Other options for failure (maybe a default tile? Ugly but not terrible for a roguelike)
-                return null;
+        // I want to make this non-blocking, so going to do some weird shit with setTimeout.
+        const loopStep = () => {
+            if(entropyList.length>0) {
+                // Sort the entropyList, to put the option with fewest possibilities first
+                entropyList.sort((a,b)=>{
+                    return a.options.length - b.options.length;
+                });
+    
+                // Get the first set of options
+                const options = entropyList.shift();
+    
+                // Make sure it's length is not 0. If it is, we fucked up.
+                if (options.options.length <= 0) {
+                    // TODO: Other options for failure (maybe a default tile? Ugly but not terrible for a roguelike)
+                    reject(new Error("WFC contradiction encountered."));
+                }
+    
+                // Choose an option;
+                const choice = [this.random.getRandomElement(options.options)];
+                options.options = choice;
+                doneList.push(options);
+    
+                // Propagate that choice to the other tiles
+                this.applyAdjacency(waveFunction, options.position, repeatOutput);
+                setTimeout(loopStep,0);
+            } else {
+                resolve(this.postProcess(waveFunction));
             }
-
-            // Choose an option;
-            const choice = [this.random.getRandomElement(options.options)];
-            options.options = choice;
-            doneList.push(options);
-
-            // Propagate that choice to the other tiles
-            this.applyAdjacency(waveFunction, options.position, repeatOutput);
-
-            // Reduce the cap to avoid infinite looping.
-            cap--;
         }
-        return this.postProcess(waveFunction);
+
+        loopStep();
     }
 
     /** Convert the array of numbers into the desired output */
