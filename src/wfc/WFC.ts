@@ -27,7 +27,7 @@ interface WFCOutputParams {
 }
 
 /**
- * Tile frequencies. Just casually going to structure this to match the format for Random...
+ * Tile frequencies.
  */ 
 interface TileFrequency {
     option:WfcTile;
@@ -38,10 +38,10 @@ interface TileFrequency {
  * Tile adjacency rule
  */
 interface Rule {
-    up: Array<number>;
-    down: Array<number>;
-    left: Array<number>;
-    right: Array<number>;
+    up: Set<number>;
+    down: Set<number>;
+    left: Set<number>;
+    right: Set<number>;
 }
 
 /**
@@ -163,25 +163,25 @@ export default class WFC {
         const rules:Array<Rule> = tiles.map((tile)=>{
             // Begin a new rule!
             const rule:Rule = {
-                up:[],
-                down:[],
-                left:[],
-                right:[],
+                up:new Set(),
+                down:new Set(),
+                left:new Set(),
+                right:new Set(),
             };
 
             // Check if the tile is compatible with every other tile, in the 4 directions
             tiles.forEach((otherTile,i)=>{
                 if(tile.compatible(otherTile,-1,0)) {
-                    rule.right.push(i);
+                    rule.right.add(i);
                 }
                 if(tile.compatible(otherTile,1,0)) {
-                    rule.left.push(i);
+                    rule.left.add(i);
                 }
                 if(tile.compatible(otherTile,0,-1)) {
-                    rule.down.push(i);
+                    rule.down.add(i);
                 }
                 if(tile.compatible(otherTile,0,1)) {
-                    rule.up.push(i);
+                    rule.up.add(i);
                 }
             });
 
@@ -256,8 +256,7 @@ export default class WFC {
                 doneList.push(options);
     
                 // Propagate that choice to the other tiles
-                this.applyAdjacency(waveFunction, options.position, repeatOutput);
-                setTimeout(loopStep,0);
+                this.applyAdjacency(waveFunction, options.position, repeatOutput, loopStep);
             } else {
                 resolve(this.postProcess(waveFunction));
             }
@@ -298,19 +297,29 @@ export default class WFC {
     }
 
     /** Apply adjacency rules */
-    applyAdjacency(waveFunction:Array<Array<Options>>, [x,y]:[number,number], repeatOutput:boolean, backTrack=false) {
+    applyAdjacency(waveFunction:Array<Array<Options>>, [x,y]:[number,number], repeatOutput:boolean, callback:Function, backTrack=false) {
         const toDoTiles:Array<Options> = [waveFunction[y][x]];
         const doneTiles:Array<Options> = [];
-
-        while(toDoTiles.length > 0) {
-            const doTile = toDoTiles.pop();
-            this.propogate(waveFunction, doTile.position, repeatOutput, doneTiles).forEach(newTile=>{
-                toDoTiles.push(newTile);
-            });
-            if (!backTrack) {
-                doneTiles.push(doTile);
+        
+        const propogateStep = ()=>{
+            let index=0;
+            while (toDoTiles.length > 0 && index < 10) {
+                index++;
+                const doTile = toDoTiles.pop();
+                this.propogate(waveFunction, doTile.position, repeatOutput, doneTiles).forEach(newTile=>{
+                    toDoTiles.push(newTile);
+                });
+                if (!backTrack) {
+                    doneTiles.push(doTile);
+                }
+            } 
+            if (toDoTiles.length > 0) {
+                setTimeout(propogateStep);
+            } else {
+                callback();
             }
         }
+        propogateStep();
     }
 
     /** Individual propogation step */
@@ -318,34 +327,26 @@ export default class WFC {
         const options:Options = waveFunction[y][x];
 
         const aggregateRules:Rule = {
-            up:[],
-            down:[],
-            left:[],
-            right:[],
+            up:new Set(),
+            down:new Set(),
+            left:new Set(),
+            right:new Set(),
         };
 
         // Get all available possibilities
         options.options.forEach(option=>{
             const rule:Rule = this.rules[option];
             rule.up.forEach(x=>{
-                if (!aggregateRules.up.includes(x)) {
-                    aggregateRules.up.push(x)
-                }
+                aggregateRules.up.add(x)
             });
             rule.down.forEach(x=>{
-                if (!aggregateRules.down.includes(x)) {
-                    aggregateRules.down.push(x)
-                }
+                aggregateRules.down.add(x)
             });
             rule.left.forEach(x=>{
-                if (!aggregateRules.left.includes(x)) {
-                    aggregateRules.left.push(x)
-                }
+                aggregateRules.left.add(x)
             });
             rule.right.forEach(x=>{
-                if (!aggregateRules.right.includes(x)) {
-                    aggregateRules.right.push(x)
-                }
+                aggregateRules.right.add(x)
             });
         });
 
@@ -375,11 +376,10 @@ export default class WFC {
                 }
                 const beforeLength = waveFunction[yy][xx].options.length;
                 waveFunction[yy][xx].options = waveFunction[yy][xx].options.filter(x=>{
-                    return aggregateRules[step].includes(x);
+                    return aggregateRules[step].has(x);
                 })
 
                 if (beforeLength > waveFunction[yy][xx].options.length) {
-                    // this.propogate(waveFunction,[xx,yy],repeatOutput);
                     nextTiles.push(waveFunction[yy][xx]);
                 }
             }
