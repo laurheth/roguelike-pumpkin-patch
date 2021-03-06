@@ -9,5 +9,7 @@ module.exports = {
   moduleNameMapper: {
     "./Tile.js":"./Tile.ts",
     "./DisplayStyle.js":"./DisplayStyle.ts",
+    "./WfcTile.js":"./WfcTile.ts",
+    "../random/Random.js":"../random/Random.ts",
   }
 };

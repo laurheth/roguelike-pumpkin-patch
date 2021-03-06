@@ -385,13 +385,13 @@ window.addEventListener("resize",()=>{
 });
 
 // WFC display
-
 const wfcDisplayParams = {
     target: document.getElementById("wfcDisplay"),
-    width: width,
-    height: height,
+    width: 20,
+    height: 20,
 };
 const wfcDisplay = new Display(wfcDisplayParams);
+wfcDisplay.tileSize = wfcDisplay.calculateTileSize();
 
 // The WFC generator takes an input "image", which it uses to figure out rules for the output.
 const inputImage = [
@@ -402,3 +402,44 @@ const inputImage = [
 ];
 
 const wfc = new WFC({input:inputImage,n:3,repeatInput:true});
+const output = wfc.generate({width:20,height:20,repeatOutput:true});
+
+output.forEach((row,j)=>{
+    row.forEach((col,i)=>{
+        wfcDisplay.setTile(i,j,col);
+    });
+});
+
+const wfcDisplayParamsTwo = {
+    target: document.getElementById("wfcDisplayTwo"),
+    width: 20,
+    height: 20,
+};
+const wfcDisplayTwo = new Display(wfcDisplayParamsTwo);
+wfcDisplayTwo.tileSize = wfcDisplayTwo.calculateTileSize();
+
+// The WFC generator takes an input "image", which it uses to figure out rules for the output.
+const inputImageTwo = [
+    "    #.#        ",
+    "    #.#        ",
+    "    #.#        ",
+    "#####.##       ",
+    ".......########",
+    "####...........",
+    "   ##.#########",
+    "    #.#        ",
+    "   ##.##  #####",
+    "####...####...#",
+    "...............",
+    "####...####...#",
+    "   ##.##  #####",
+];
+
+const wfcTwo = new WFC({input:inputImageTwo,n:3,repeatInput:true});
+const outputTwo = wfcTwo.generate({width:20,height:20,repeatOutput:true});
+
+outputTwo.forEach((row,j)=>{
+    row.forEach((col,i)=>{
+        wfcDisplayTwo.setTile(i,j,col);
+    });
+});
