@@ -14,7 +14,9 @@ interface WFCParams {
     n?:number;
     m?:number;
     repeatInput?:boolean;
-    random?:Random
+    random?:Random;
+    includeRotations?:boolean;
+    includeMirrors?:boolean;
 }
 
 /** Parameters for the WFC output. */
@@ -61,7 +63,7 @@ export default class WFC {
     private random:Random;
 
     constructor( params:WFCParams ) {
-        const { input, n=1, m=n, repeatInput=false, random, ...rest } = params;
+        const { input, n=1, m=n, repeatInput=false, random, includeMirrors=false, includeRotations=false, ...rest } = params;
         
         // Convert into a 2d array
         const inputImage:Array<Array<any>> = input.map(row=>{
@@ -73,7 +75,7 @@ export default class WFC {
         });
 
         // Process the input image and store that data
-        [this.rules, this.frequencies] = this.processInput(inputImage, repeatInput, n, m);
+        [this.rules, this.frequencies] = this.processInput(inputImage, repeatInput, n, m, includeRotations, includeMirrors);
         this.n=n;
         this.m=m;
 
@@ -87,7 +89,7 @@ export default class WFC {
     /**
      * Method that processes the image to generate adjacency rules and tile frequencies.
      */
-    private processInput(input:Array<Array<any>>, repeatInput:boolean, n:number, m:number):[Array<Rule>, Array<TileFrequency>] {
+    private processInput(input:Array<Array<any>>, repeatInput:boolean, n:number, m:number, rotations:boolean, mirrors:boolean):[Array<Rule>, Array<TileFrequency>] {
         // Get dimensions
         // Height is just the length of the array
         const height = input.length;
@@ -95,7 +97,6 @@ export default class WFC {
         // Width is the minimum length of a subarray; force it to be square.
         const width = Math.min(...input.map(row=>row.length));
         const widthTiles = width  - ((!repeatInput) ? (n - 1) : 0)
-
 
         // Get all tiles in the input
         const rawTiles:Array<WfcTile> = [];
@@ -116,6 +117,29 @@ export default class WFC {
             }
         }
 
+        // Add in rotations and mirrors, if requested.
+        if(mirrors) {
+            [...rawTiles].forEach(tile=>{
+                const verticalMirror = tile.contents.map(row=>[...row]).reverse();
+                const horizontalMirror = tile.contents.map(row=>[...row].reverse());
+                rawTiles.push(new WfcTile(verticalMirror));
+                rawTiles.push(new WfcTile(horizontalMirror));
+            });
+        }
+        if(rotations) {
+            [...rawTiles].forEach(tile=>{
+                let templateTile:Array<Array<any>> = tile.contents.map(row=>[...row]);
+                for(let i=0;i<3;i++) {
+                    templateTile = templateTile[0].map((_,index)=>{
+                        return templateTile.map(row=>row[index]);
+                    });
+                    rawTiles.push(new WfcTile(
+                        templateTile.map(row=>[...row])
+                    ));
+                }
+            });
+        }
+
         // Filter down, to get rid of repeats
         const tiles:Array<WfcTile> = [];
         const frequencies:Array<TileFrequency> = [];
@@ -132,6 +156,8 @@ export default class WFC {
                 });
             }
         });
+
+        console.log(tiles);
 
         // Next, we need adjacency rules
         const rules:Array<Rule> = tiles.map((tile)=>{
@@ -301,17 +327,27 @@ export default class WFC {
         // Get all available possibilities
         options.options.forEach(option=>{
             const rule:Rule = this.rules[option];
-            rule.up.forEach(x=>aggregateRules.up.push(x));
-            rule.down.forEach(x=>aggregateRules.down.push(x));
-            rule.left.forEach(x=>aggregateRules.left.push(x));
-            rule.right.forEach(x=>aggregateRules.right.push(x));
+            rule.up.forEach(x=>{
+                if (!aggregateRules.up.includes(x)) {
+                    aggregateRules.up.push(x)
+                }
+            });
+            rule.down.forEach(x=>{
+                if (!aggregateRules.down.includes(x)) {
+                    aggregateRules.down.push(x)
+                }
+            });
+            rule.left.forEach(x=>{
+                if (!aggregateRules.left.includes(x)) {
+                    aggregateRules.left.push(x)
+                }
+            });
+            rule.right.forEach(x=>{
+                if (!aggregateRules.right.includes(x)) {
+                    aggregateRules.right.push(x)
+                }
+            });
         });
-
-        // Remove duplicates
-        aggregateRules.up = aggregateRules.up.filter((x,i,arr)=>arr.indexOf(x)===i);
-        aggregateRules.down = aggregateRules.down.filter((x,i,arr)=>arr.indexOf(x)===i);
-        aggregateRules.left = aggregateRules.left.filter((x,i,arr)=>arr.indexOf(x)===i);
-        aggregateRules.right = aggregateRules.right.filter((x,i,arr)=>arr.indexOf(x)===i);
 
         // Maintain list of next tiles to go to
         const nextTiles:Array<Options> = [];

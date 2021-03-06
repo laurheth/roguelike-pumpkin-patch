@@ -433,7 +433,7 @@ const inputImageTwo = [
     "                 ",
 ];
 
-const wfcTwo = new WFC({input:inputImageTwo,n:3,repeatInput:true});
+const wfcTwo = new WFC({input:inputImageTwo,n:3,repeatInput:true,includeMirrors:true,includeRotations:true});
 wfcTwo.generate({width:20,height:20,repeatOutput:true}).then(result=>{
     result.forEach((row,j)=>{
         row.forEach((col,i)=>{
