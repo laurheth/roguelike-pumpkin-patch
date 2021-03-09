@@ -156,18 +156,11 @@ export default class Tile {
             this._classList = [];
         }
         // Only add/remove classes if the two lists are actually different
-        // This is ugly, but changing the DOM is more expensive than this is.
         if (newClassList.length !== this._classList.length ||
-            !newClassList.every(name=>this._classList.includes(name)) ||
-            !this._classList.every(name=>newClassList.includes(name))) {
-            if (this._classList.length > 0) {
-                this.element.classList.remove(...this._classList);
-            }
-            this._classList = newClassList.filter(x=>x.trim() && x!==baseClassName);
-            if (newClassList.length > 0) {
-                // Set using the getter, to ensure baseClassName is still on the list.
-                this.element.classList.add(...this.classList);
-            }
+            newClassList.every((className,i)=>className === this._classList[i])) {
+            this._classList = newClassList;
+            // Set using the getter, to ensure baseClassName is still on the list.
+            this.element.className = this.classList.join(' ');
         }
     }
 
