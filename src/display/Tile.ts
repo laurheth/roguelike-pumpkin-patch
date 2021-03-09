@@ -157,7 +157,7 @@ export default class Tile {
         }
         // Only add/remove classes if the two lists are actually different
         if (newClassList.length !== this._classList.length ||
-            newClassList.every((className,i)=>className === this._classList[i])) {
+            !newClassList.every((className,i)=>className === this._classList[i])) {
             this._classList = newClassList;
             // Set using the getter, to ensure baseClassName is still on the list.
             this.element.className = this.classList.join(' ');
